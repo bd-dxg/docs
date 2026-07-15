@@ -1,0 +1,150 @@
+:root {
+  /* 设置代码块区域自定义字体 */
+  --vp-font-family-mono: '汉仪玛奇朵', ui-monospace !important;
+  /* 设置代码块区域字体大小 */
+  --vp-code-font-size: 1.1rem;
+  --darkreader-background-0060d4: #4a6e3b !important;
+  /* 设置风格提示区域字体大小 */
+  --vp-custom-block-font-size: 16px;
+}
+/* 修改VPBadge标签位置为同标题同一水平线 */
+.VPBadge {
+  margin-top: unset !important;
+  vertical-align: middle !important;
+}
+
+@property --num {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+/* 修改文章中粗体样式 */
+.VPDoc main strong {
+  --num: 0;
+  --deg: calc(var(--num) * 1deg);
+  background: linear-gradient(120deg, hsl(var(--deg), 70%, 60%) 30%, hsl(calc(var(--deg) + 30deg), 70%, 60%));
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  animation: rotate 12s linear infinite;
+  /* 添加文字轮廓 */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 覆盖系统的"减少动画"设置，强制显示动画 */
+@media (prefers-reduced-motion: reduce) {
+  .VPDoc main strong {
+    animation: rotate 12s linear infinite !important;
+  }
+}
+
+@keyframes rotate {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 360;
+  }
+}
+
+/* 为所有响应式布局变化添加平滑过渡 */
+.VPDoc .container,
+.VPDoc .content,
+.VPDoc .content-container,
+.VPDoc .aside,
+.VPSidebar,
+.VPContent {
+  transition:
+    max-width 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    padding 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
+}
+
+/* 调整页面默认宽度,适配高分屏 */
+@media (min-width: 1920px) {
+  :root {
+    --vp-layout-max-width: 1920px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .container {
+    max-width: 1584px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1264px !important;
+  }
+
+  .VPDoc.has-aside .content-container {
+    max-width: 1168px !important;
+  }
+}
+
+/* 优化代码块标题图标位置和大小 */
+.vp-code-block-title-bar {
+  padding: unset !important;
+  overflow: hidden;
+  .vp-code-block-title-text {
+    padding: unset !important;
+    line-height: unset !important;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+
+    &::before {
+      width: 2rem !important;
+      height: 2rem !important;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* 调整自定义块的字体样式 */
+#VPContent .main .custom-block {
+  --background: #fafaf9;
+  border-radius: 0.75rem;
+  p.custom-block-title {
+    font-size: 18px;
+  }
+  &.info {
+    --info-color: #0969da;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: 'ℹ️';
+    }
+  }
+  &.tip {
+    --info-color: #1a7f37;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: '💗';
+    }
+  }
+  &.important {
+    --info-color: #8250df;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: '📢';
+    }
+  }
+  &.warning {
+    --info-color: #9a6700;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: '⚠️';
+    }
+  }
+  &.caution {
+    --info-color: #cf222e;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: '🚫';
+    }
+  }
+}
