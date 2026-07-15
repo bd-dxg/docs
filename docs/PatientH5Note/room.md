@@ -1,6 +1,6 @@
 # 问诊室模块
 
-<img src="./images/room.png" width="414" />
+<img src="./images/room.avif" width="414" />
 
 ## 问诊室-组件拆分{#room-components}
 

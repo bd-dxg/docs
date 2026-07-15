@@ -1,6 +1,8 @@
 # 超级医生
 
-<SuperDoctor></SuperDoctor>
+```vue
+<SuperDoctor />
+```
 
 ## 备用地址
 

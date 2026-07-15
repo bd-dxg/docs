@@ -8,6 +8,17 @@ const viteConfig = {
       ignored: ['**/*.webm', '**/*.mp4', '**/*.mov', '**/*.avi'],
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      external: ['gitalk'],
+      output: {
+        globals: {
+          gitalk: 'Gitalk',
+        },
+      },
+    },
+  },
 }
 
 export default viteConfig
