@@ -6,3 +6,18 @@ declare module '*.vue' {
   export default component
 }
 
+interface GitalkConfig {
+  clientID: string
+  clientSecret: string
+  repo: string
+  owner: string
+  admin: string[]
+  labels: string[]
+  distractionFreeMode?: boolean
+  proxy?: string
+  language?: string
+  perPage?: number
+  pagerDirection?: string
+  createIssueManually?: boolean
+  enableHotKey?: boolean
+}
