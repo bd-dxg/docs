@@ -5,6 +5,10 @@ export default defineConfig({
   srcDir: 'docs',
   title: '一些项目文档合集',
   description: 'A VitePress Site',
+  head: [
+    ['script', { src: 'https://unpkg.com/gitalk@1.8.0/dist/gitalk.min.js' }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk@1.8.0/dist/gitalk.css' }],
+  ],
   markdown: markdownConfig,
   themeConfig: {
     nav: [
