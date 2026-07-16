@@ -5,7 +5,7 @@ export const gitalkConfig: GitalkConfig = {
   clientSecret: import.meta.env.VITE_GITALK_CLIENT_SECRET,
 
   // GitHub 仓库配置
-  repo: 'bd-dxg/docs', // 仓库名
+  repo: 'docs', // 仓库名
   owner: 'bd-dxg', // 仓库所有者
   admin: ['bd-dxg'], // 管理员用户名数组
   labels: ['Gitalk'], // GitHub issue 标签
