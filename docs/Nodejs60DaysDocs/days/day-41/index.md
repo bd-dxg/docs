@@ -321,7 +321,9 @@ docker images blog-api:day41          # 看最终镜像总大小
    ```
    注意 `host.docker.internal`——**容器里的 `localhost` 是容器自己**，连不到宿主机的 PG/Redis。这是第 2 节「namespace 网络隔离」最具体的一次体验：必须用宿主机地址，加 `--add-host=host.docker.internal=host-gateway` 才解析得到。（Day 42 把 api 和 DB 放同一 compose 网络后，就能直接用服务名 `postgres` / `redis` 互访了。）
 
+::: v-pre
 4. **验证探针与优雅关闭**：另开终端 `curl localhost:3000/health` 返回 `{status:"ok"}`；`docker inspect --format='{{.State.Health.Status}}' <容器>` 看 `healthy`；`docker stop <容器>`，观察日志能看到 Nest 的 shutdown hook 执行（而不是被 SIGKILL）。
+:::
 
 5. **验证安全项**：`docker exec <容器> id` 应显示 `uid=101(app)` 非 root；`docker run --rm blog-api:day41 ls /app` 确认没有 `src/`、没有 `.env`、没有 `test/`；`docker history blog-api:day41` 找不到任何带密钥的层。
 

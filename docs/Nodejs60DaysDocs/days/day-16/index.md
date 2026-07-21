@@ -261,7 +261,7 @@ Module 决定「谁在场」，Controller 决定「怎么进来」，Service 决
 4. 用 curl 或 Thunder Client 跑通 5 个接口
 5. 故意少传字段，确认 422 校验生效；故意请求不存在的 id，确认 404 由 `NotFoundException` 触发
 
-参考实现见 [`solutions/blog-api/`](./solutions/blog-api)，里面是去掉冗余模板后的最小可用版本，包含全局 `ValidationPipe`、分页、`author/tag` 过滤。
+参考实现见 [`solutions/blog-api/README.md`](./solutions/blog-api/README.md)，里面是去掉冗余模板后的最小可用版本，包含全局 `ValidationPipe`、分页、`author/tag` 过滤。
 
 ---
 

@@ -243,12 +243,16 @@ CI 慢了没人用、贵了老板不让跑。两个杠杆：
 `docker-publish.yml` 的 `build-and-push` job 把 Day 41 的镜像发布出去。重点在几个选型：
 
 **① 为什么是 GHCR（`ghcr.io`）不是 Docker Hub。** 三个理由：
-- **认证零成本**：GHCR 用每次 run 自动注入的 `GITHUB_TOKEN` 认证（`docker/login-action` 里 `password: ${{ secrets.GITHUB_TOKEN }}`），**不用配任何外部账号密码**。Docker Hub 得另开账号、存 token、还得管过期。
+
+::: v-pre
+- **认证零成本**：GHCR 用每次 run 自动注入的 `GITHUB_TOKEN` 认证（`docker/login-action` 里 `password:` 后接 `${{ secrets.GITHUB_TOKEN }}`），**不用配任何外部账号密码**。Docker Hub 得另开账号、存 token、还得管过期。
+:::
 - **权限统一**：镜像和代码在同一个 GitHub 仓库/组织下，访问权限跟着 repo 走。
 - **绕开本机的网络限制**：本机连不上 Docker Hub（Day 41/42 一直被这个卡），但 CI runner 在 GitHub 的网络里，拉/推 GHCR 都通畅——CI 正好替你把「本机干不了」的镜像发布干了。
 
 **② git tag 怎么变成镜像 tag。** 手写 `echo "v1.0"` 拼 tag 既笨又易错。用 `docker/metadata-action` 从 git 元数据自动算：
 
+::: v-pre
 ```yaml
 - uses: docker/metadata-action@v5
   id: meta
@@ -259,12 +263,15 @@ CI 慢了没人用、贵了老板不让跑。两个杠杆：
       type=semver,pattern={{version}}   # 打 v1.2.3 → tag "1.2.3"
       type=sha,prefix=sha-,format=short # 每次 → tag "sha-abc1234"
 ```
+:::
 
 合进 main → 产出 `ghcr.io/<owner>/<repo>:main` + `:sha-abc1234`；打 `v1.2.3` → 额外产出 `:1.2.3`。**每次构建都有一个 `sha-<git短hash>` 的 tag**——这是可追溯性的关键：生产上跑的是哪个镜像，反查 git sha 就知道是哪次提交构建的，绝不靠人记。
 
 **③ 构建复用 Day 41 的 Dockerfile。** `context: solutions/blog/blog-api` + `file: .../Dockerfile`——今天一行没动那个三阶段 Dockerfile，CD 只是把「构建它」这件事自动化了。这印证了 Day 41 的设计目标：**镜像自包含、和运行环境无关**——同一个 Dockerfile，本地能 `docker build`、CI 里也能 build-push，产出一致。
 
+::: v-pre
 > 一个 GHCR 的小坑：镜像名要求**全小写**。`ghcr.io/${{ github.repository }}` 展开是 `ghcr.io/<owner>/<repo>`——只要 owner 或 repo 名含大写字母（比如 `Owner/Repo`），推送会报错。我们的 `cris1994/...` 全小写没事；你的仓库若含大写，得先用 `docker/metadata-action` 或一步 `tr` 转小写（见思考题）。
+:::
 
 ### 11. 部署的形状：画出「上线」该长什么样
 
@@ -322,10 +329,11 @@ CI 必然碰到「这里要用密码/密钥」的时刻。区分三类：
 |---|---|---|
 | **`GITHUB_TOKEN`** | 推 GHCR 时用 | **自动注入**，每次 run 一个临时令牌，**不用你配**。`secrets.GITHUB_TOKEN` 直接读 |
 | **测试用的非密钥配置** | `JWT_ACCESS_SECRET` 等 | 直接写进 `env:`（见下）——它们是**测试占位值**，不是真生产密钥 |
-| **真生产密钥** | deploy 里的 `PROD_HOST` / ssh key | 该进 **Encrypted Secrets**（仓库 Settings → Secrets），workflow 里 `${{ secrets.X }}` 读 |
+| **真生产密钥** | deploy 里的 `PROD_HOST` / ssh key | 该进 **Encrypted Secrets**（仓库 Settings → Secrets），workflow 里 <code v-pre>${{ secrets.X }}</code> 读 |
 
 为什么 `JWT_ACCESS_SECRET` 能直接写在 `env:` 里？因为它在 CI 里只是个**让应用能启动、测试能跑的占位值**——和 `test/setup.cjs` 里那个 `test-access-secret-...` 一个性质。它签出的 token 只在这次 CI run 的测试进程里流转，run 一结束 runner 销毁，这个 secret 没有任何泄露价值。**真正不能落明文的是生产密钥**（线上签 token 的那个）——那玩意儿才需要进 Encrypted Secrets，而且绝不进镜像（Day 41 的红线，今天没破）。
 
+::: v-pre
 ```yaml
 env:
   # 测试占位值：直接写明文，因为它是「测试专用、无泄露价值」的
@@ -334,6 +342,7 @@ env:
 # 真生产密钥（deploy 用）才走 secret：
 # ssh -i <(echo "${{ secrets.PROD_SSH_KEY }}") ...
 ```
+:::
 
 判断标准一句话：**这个值泄露了会不会造成真实损害？** 会 → Encrypted Secret；不会（占位/测试值）→ 直接写。别为了「看起来安全」把测试占位值也塞进 secret——那只是增加配置复杂度，安全性零提升。
 
@@ -435,7 +444,9 @@ env:
 5. **思考题**：
    - 如果把 `ci.yml` 里 `migrate deploy` 和 `pnpm test` 两步**对调**，第一次跑会怎样？第二次呢？（提示：表还没建，所有读写表的 e2e 用例集体炸；和 Day 42「api 比 migrate 先起」是同一个时序坑。）
    - `ci.yml` 的 service container 用的是 `localhost:5432`，Day 42 的 compose 用的是 `postgres:5432`——为什么同样是连 PG，地址写法却相反？（提示：compose 有 Docker DNS 解析服务名；GHA service container 把端口映射到 runner 的 localhost，没有服务名 DNS。）
+   ::: v-pre
    - 如果仓库 owner 名含大写（如 `Alice/blog`），`docker-publish.yml` 的 `ghcr.io/${{ github.repository }}` 推送会失败——为什么？怎么修？（提示：GHCR 要求镜像名全小写；用一步把 `github.repository` 转小写，或 metadata-action 的 lowercase 选项。）
+:::
    - 我们隔离了 2 个 flaky 用例让 CI 转绿。如果**不隔离**、任由 CI 一直红，会发生什么更糟糕的事？（提示：见 §8——人会习惯性忽略红色，真正的新故障被淹没在「已知噪音」里，CI 的可信度归零。隔离是为了**保住绿灯的可信度**，不是为了好看。）
 
 ---
