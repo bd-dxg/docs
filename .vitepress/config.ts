@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { viteConfig, markdownConfig, patientH5NoteSidebar } from './configs'
+import { viteConfig, markdownConfig, sidebar } from './configs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'docs',
@@ -13,9 +13,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: '优医问诊', link: '/PatientH5Note' },
+      { text: '优医问诊', link: '/PatientH5Note/' },
+      { text: '60天NodeJS', link: '/Nodejs60DaysDocs/days/day-01/' },
     ],
-    sidebar: [patientH5NoteSidebar],
+    sidebar,
   },
   vite: viteConfig,
 })

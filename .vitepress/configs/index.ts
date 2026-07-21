@@ -1,3 +1,5 @@
-export { default as markdownConfig } from './markdown'
-export { default as viteConfig } from './vite'
-export { default as patientH5NoteSidebar } from './siderbar/PatientH5Note'
+import markdownConfig from './markdown'
+import viteConfig from './vite'
+import sidebar from './siderbar/index'
+
+export { markdownConfig, viteConfig, sidebar }
