@@ -4,7 +4,7 @@
 
 ## 📋 今日目标
 
-- 安装 Node.js 开发环境（nvm + Node.js v20+）
+- 安装 Node.js 开发环境
 - 理解 Node.js 是什么、为什么它适合全栈开发
 - 运行第一个 Node.js 程序
 - 熟悉 REPL 和命令行工具
@@ -37,8 +37,9 @@ Node.js 是一个基于 Chrome V8 引擎的 **JavaScript 运行时**。它让 Ja
 - **市场需求**：Next.js 全栈框架的流行让 Node.js 全栈工程师需求暴增
 - **思维连贯**：前端对异步编程、事件驱动的理解可以无缝迁移
 
-### 3. 安装 Node.js
+### 3. 安装 Node.js <Badge type="tip" text="改动" />
 
+::: details 原版
 **推荐使用 nvm（Node Version Manager）管理 Node.js 版本：**
 
 ```bash
@@ -68,7 +69,65 @@ corepack prepare pnpm@latest --activate
 pnpm --version
 ```
 
-### 4. 配置开发环境
+:::
+
+#### 3.1 推荐安装方式 [pnpm](https://pnpm.io/)
+
+管理 node 版本, 当前使用最新版 `pnpm 11` 版本 作为介绍
+
+:::code-group
+
+```powershell [Windows]
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+```
+
+```shell [MacOS/Linux]
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+:::
+安装完成pnpm后, 通过[pnpm来管理/安装/卸载 nodeJS](https://pnpm.io/cli/runtime):
+
+```shell
+# 安装长期支持版本
+pnpm runtime set node lts -g
+# 安装最新版本
+pnpm runtime set node latest -g
+# 安装指定版本
+pnpm runtime set node 22 -g
+```
+
+> [!tip] 提示
+> 自 v11.0.0 起，安装 Node.js 运行时（通过 `pnpm runtime set node …` 或 `node@runtime:<version>`）不会从 Node.js 归档中提取捆绑的 npm、npx 和 corepack。 这样一来，pnpm 在运行时安装期间需要哈希处理、写入 CAS 和链接的文件数量大致减少了一半。 如果仍然需要 npm，请使用 pnpm add -g npm 单独安装它。
+
+#### 3.2 使用[viteplus](https://viteplus.dev/guide/)管理
+
+vitePlus又被叫做 vite+, 是尤雨溪推荐的前端工程统一化工具,是对`pnpm`、`yarn`和`npm`进一步的封装
+
+涵盖包管理器、开发服务器、LINTER、格式化器、测试运行器、捆绑器、任务执行器以及越来越多的配置文件。
+
+我个人正在使用这一套全家桶, 喜欢的可以试试:
+
+:::code-group
+
+```powershell [Windows]
+irm https://vite.plus/ps1 | iex
+```
+
+```bash [MacOS/Linux]
+curl -fsSL https://vite.plus | bash
+```
+
+:::
+安装完成的同时,会自动安装一个长期支持版的node版本,如果想用指定的node版本,也可以通过命令管理node版本
+
+```bash
+vp env use 20
+```
+
+### 4. 配置开发环境 <Badge type="tip" text="改动" />
+
+::: details 原版
 
 **VS Code 推荐插件：**
 
@@ -76,6 +135,13 @@ pnpm --version
 - **Prettier** — 代码格式化
 - **Thunder Client** — API 测试（类似 Postman）
 - **Error Lens** — 行内显示错误信息
+  :::
+
+**VS Code 推荐插件：**
+
+- **[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)** — 行内显示错误信息
+- **[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)** — API 测试（类似 Postman）
+- **[Oxc](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode)** - 新一代lint和fmt工具,可配合vitePlus使用,也可以单独使用
 
 ### 5. Node.js REPL
 
@@ -173,11 +239,9 @@ console.log('exports:', exports) // 模块导出对象
 // 需要使用 import.meta.url 替代
 ```
 
----
-
 ## 💻 实践练习
 
-### 练习 1：系统信息收集器
+### 练习 1：系统信息收集器 <Badge type="tip" text="改动" />
 
 编写一个 `system-info.js` 脚本，收集并美化输出以下系统信息：
 
@@ -191,7 +255,11 @@ console.log('exports:', exports) // 模块导出对象
 
 **提示**：使用 `process` 对象和 `os` 模块（`const os = require('os')` 或 `import os from 'os'`）。
 
-### 练习 2：命令行计算器
+:::details 答案
+<<< ./solutions/01-system-info.js
+:::
+
+### 练习 2：命令行计算器 <Badge type="tip" text="改动" />
 
 编写一个 `calc.js`，支持通过命令行参数进行计算：
 
@@ -209,7 +277,11 @@ node calc.js divide 15 3   # 输出: 5
 - 处理无效操作符的错误
 - 使用不同的退出码来表示成功(0)和失败(1)
 
-### 练习 3：交互式问候程序
+:::details 答案
+<<< ./solutions/02-calc.js
+:::
+
+### 练习 3：交互式问候程序 <Badge type="tip" text="改动" />
 
 编写一个 `greeter.js`，使用 `process.stdin` 和 `process.stdout` 实现：
 
@@ -217,11 +289,13 @@ node calc.js divide 15 3   # 输出: 5
 2. 提示用户输入年龄
 3. 输出个性化问候信息
 
----
+:::details 答案
+<<< ./solutions/03-greeter.js
+:::
 
 ## ✅ 今日产出
 
-- [ ] 安装好 Node.js v20+、pnpm、VS Code 插件
+- [ ] 安装好 Node.js 、pnpm、VS Code 插件
 - [ ] 完成 `hello.js` 和 `process-demo.js`
 - [ ] 完成练习 1（系统信息收集器）
 - [ ] 完成练习 2（命令行计算器）
@@ -232,7 +306,3 @@ node calc.js divide 15 3   # 输出: 5
 - [Node.js 官方文档 - Getting Started](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
 - [Node.js 官方文档 - process](https://nodejs.org/docs/latest-v20.x/api/process.html)
 - [nvm GitHub 仓库](https://github.com/nvm-sh/nvm)
-
----
-
-[➡️ Day 02 — 模块系统与包管理](../day-02/)
