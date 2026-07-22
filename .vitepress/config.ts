@@ -17,6 +17,7 @@ export default defineConfig({
       { text: '60天NodeJS', link: '/Nodejs60DaysDocs/days/day-01/' },
     ],
     sidebar,
+    outline: 'deep',
   },
   vite: viteConfig,
 })

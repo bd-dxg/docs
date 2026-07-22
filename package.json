@@ -11,14 +11,17 @@
   "devDependencies": {
     "@types/node": "^24.12.2",
     "typescript": "^5.9.3",
+    "vite-plus": "latest",
     "vitepress": "2.0.0-alpha.18",
     "vitepress-plugin-group-icons": "^1.7.5",
-    "vite-plus": "latest",
     "vue": "^3.5.39"
   },
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "markdown-it-task-lists-ts": "^1.0.4"
   }
 }
