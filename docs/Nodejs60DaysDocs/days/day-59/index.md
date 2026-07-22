@@ -1,5 +1,7 @@
 # Day 59 — 简历项目包装与面试准备
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 项目描述撰写技巧：用数字和技术方案说话

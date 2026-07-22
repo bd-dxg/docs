@@ -1,5 +1,7 @@
 # Day 32 — JWT 认证实战
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > 把 Day 31 的概念落地到 blog-api：bcrypt 存密码、注册/登录、Access + 可撤销 Refresh 双 Token、一个 JWT 守卫保护 `/auth/me`。
 > 边界：Day 32 只做**认证**（你是谁），**不保护 posts**——给 posts 加守卫 + 角色是 Day 33 的 RBAC。所以 posts 业务代码和它的 e2e 用例不变。
 

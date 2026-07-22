@@ -1,5 +1,7 @@
 # Day 29 — 数据库事务与并发控制
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把 ACID 四个字母落到这个 app 上：哪些是事务 API 给的，哪些是约束 / WAL 给的

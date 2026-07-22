@@ -1,5 +1,7 @@
 # Day 12 — RESTful API 设计原则
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 掌握 RESTful API 的设计规范

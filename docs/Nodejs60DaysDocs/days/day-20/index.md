@@ -1,5 +1,7 @@
 # Day 20 — 🏆 里程碑：NestJS 博客 API（无数据库版）
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把 Day 16–19 的零散知识点拧成一个能跑、能演示、能交接的完整项目

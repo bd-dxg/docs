@@ -1,5 +1,7 @@
 # Day 22 — SQL 进阶：JOIN、子查询与聚合
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把 INNER / LEFT / RIGHT / FULL JOIN 一次性想清楚，再也不靠"试出来"

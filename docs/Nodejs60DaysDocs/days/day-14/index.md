@@ -1,5 +1,7 @@
 # Day 14 — 错误处理与调试技巧
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 设计分层的自定义错误体系

@@ -1,5 +1,7 @@
 # Day 52 — 通知与异步任务
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 设计站内通知系统（数据模型和 API）

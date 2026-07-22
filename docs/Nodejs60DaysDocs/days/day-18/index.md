@@ -1,5 +1,7 @@
 # Day 18 — NestJS 数据验证与 DTO
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 搞清楚 DTO 不是 TS 类型，而是带运行时元数据的类

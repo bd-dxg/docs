@@ -1,5 +1,7 @@
 # Day 10 — 🏆 里程碑：迷你项目 Review
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 回顾和重构 Day 1-9 的所有代码

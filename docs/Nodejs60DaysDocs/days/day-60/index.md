@@ -1,5 +1,7 @@
 # Day 60 — 🎯 总结与进阶路线
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 60 天学习完整回顾，绘制知识体系思维导图

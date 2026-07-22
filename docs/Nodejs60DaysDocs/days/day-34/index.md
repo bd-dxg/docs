@@ -1,5 +1,7 @@
 # Day 34 — OAuth 2.0 与第三方登录
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 32-33 做完了**自己发 token** 的认证/授权。Day 34 换个场景：让用户用 **GitHub 账号**登录，
 > 而我们**永远拿不到他的 GitHub 密码**。这就是 OAuth 2.0 要解决的问题——
 > "我授权 A 应用访问我在 B 平台的部分资源，但不把 B 的密码交给 A"。

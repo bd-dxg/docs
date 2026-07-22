@@ -1,5 +1,7 @@
 # Day 42 — Docker Compose 与多服务编排
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 41 把应用打成了一个能独立 `docker build` + `docker run` 的镜像。但那天练习里有个尴尬的尾巴：想真把它跑起来，你得先 `cd ../blog-db && docker compose up -d` 手动起 PG + Redis，再 `--add-host=host.docker.internal=...` 让容器绕一圈去连宿主机的端口，迁移还要自己手动跑——而且这一切有个**绕不过去的顺序问题**：api 比 DB 先起来怎么办？
 >
 > 当时留了三条线：「多服务编排 + depends_on」「迁移 job」「就绪探针（terminus）」。今天把这三条一次性收掉。核心不是学 YAML 语法——Compose 的 YAML 一小时就能读懂——而是搞清楚**一个多服务系统「怎么自己按正确的顺序长起来」**：谁先起、起没起好的判据是什么、库结构谁负责、流量什么时候才该导进来。
@@ -177,11 +179,15 @@ readiness() {
 
 ```dockerfile
 # Day 41 的 Dockerfile 里，镜像内置的 HEALTHCHECK 打的是 /health（存活）：
+
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
 HEALTHCHECK ... CMD wget ... http://localhost:${PORT:-3000}/health
 ```
 
 ```yaml
 # Day 42 的 compose 里，api 的 healthcheck 把它【覆盖】成 /health/ready（就绪）：
+
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
 api:
   healthcheck:
     test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:3000/health/ready"]

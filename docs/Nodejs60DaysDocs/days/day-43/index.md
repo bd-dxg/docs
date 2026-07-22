@@ -1,5 +1,7 @@
 # Day 43 — CI/CD 流水线（GitHub Actions）
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 41 把应用打成了镜像、Day 42 把它和 PG/Redis/迁移 job 编排成一条 `docker compose up` 能拉起的栈。但这两天都有个共同的尾巴：**全靠人**。要验证没改坏，你得记得本地 `pnpm build` + `pnpm test`；要发布，你得记得 `docker build` + `docker push` + ssh 上去 `compose pull`——任何一步漏了，坏东西就悄无声息地进了 main。更糟的是「我本地能跑」这三个字：本机的 Node 版本、残留的 DB 数据、没跑的迁移，跟队友、跟生产根本不是一回事。
 >
 > 今天把这套「靠人记得住」全换成「push 一下自动发生」。核心不是学 YAML 语法——Actions 的 YAML 半小时就读懂——而是搞清两件事：**CI 是闸门**（每次变更都被同一个干净环境验证一遍，不通过不让合），**CD 是交付**（验证过的变更自动变成一个可追溯的产物、并走到运行环境）。期间会撞上几个 CI 日最常踩的真坑：服务怎么起、迁移谁先跑、flaky 测试怎么处理、workflow 文件放哪——逐个拆。

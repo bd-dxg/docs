@@ -1,5 +1,7 @@
 # Day 07 — HTTP 协议基础
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 深入理解 HTTP 请求/响应模型

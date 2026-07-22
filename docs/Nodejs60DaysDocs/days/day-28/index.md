@@ -1,5 +1,7 @@
 # Day 28 — 分页、搜索与排序
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把 Offset 分页和 Cursor（keyset）分页的**原理、SQL、优劣**讲透，知道什么场景用哪个

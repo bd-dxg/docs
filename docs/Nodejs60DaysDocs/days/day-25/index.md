@@ -1,5 +1,7 @@
 # Day 25 — Prisma ORM 入门
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 想清楚"为什么要用 ORM"，以及 ORM 解决的真问题是什么、解决不了什么

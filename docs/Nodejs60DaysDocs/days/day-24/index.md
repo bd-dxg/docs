@@ -1,5 +1,7 @@
 # Day 24 — 数据库建模实战
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把范式（1NF/2NF/3NF/BCNF）背后的"消除什么样的依赖"想清楚，而不是死记定义

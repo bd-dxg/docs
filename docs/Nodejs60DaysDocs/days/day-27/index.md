@@ -1,5 +1,7 @@
 # Day 27 — NestJS + Prisma 整合
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 搞懂 NestJS 的依赖注入（DI）和 Prisma 的连接池怎么对接——`PrismaService` 为什么要 `extends PrismaClient`

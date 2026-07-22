@@ -1,5 +1,7 @@
 # Day 49 — 项目与任务 CRUD
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 项目管理 API 实现（创建/更新/删除/列表）

@@ -1,5 +1,7 @@
 # Day 06 — 异步编程模式
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 回顾 Callback → Promise → async/await 的演进

@@ -1,5 +1,7 @@
 # Day 01 — 环境搭建与 Node.js 初印象
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 安装 Node.js 开发环境（nvm + Node.js v20+）
@@ -15,15 +17,16 @@ Node.js 是一个基于 Chrome V8 引擎的 **JavaScript 运行时**。它让 Ja
 
 作为前端工程师，你已经熟悉了浏览器中的 JavaScript。Node.js 和浏览器中的 JS 有以下关键区别：
 
-| 维度 | 浏览器 JS | Node.js |
-|------|----------|---------|
-| 运行环境 | 浏览器 | 操作系统 |
-| 全局对象 | `window` | `global` / `globalThis` |
-| DOM/BOM | ✅ 有 | ❌ 没有 |
-| 文件系统 | ❌ 受限 | ✅ 完整访问 |
-| 网络请求 | `fetch` / `XMLHttpRequest` | `http` / `https` / `fetch` (v18+) |
-| 模块系统 | ESModule | CommonJS + ESModule |
-| 用途 | UI 交互、页面渲染 | API 服务、工具链、脚本 |
+| 维度             | 浏览器 JS                  | Node.js                           |
+| ---------------- | -------------------------- | --------------------------------- |
+| 运行环境         | 浏览器                     | 操作系统                          |
+| 标准全局对象访问 | globalThis                 | globalThis                        |
+| 历史环境别名     | window                     | global                            |
+| DOM/BOM          | ✅ 有                      | ❌ 没有                           |
+| 文件系统         | ❌ 受限                    | ✅ 完整访问                       |
+| 网络请求         | `fetch` / `XMLHttpRequest` | `http` / `https` / `fetch` (v18+) |
+| 模块系统         | ESModule                   | CommonJS + ESModule               |
+| 用途             | UI 交互、页面渲染          | API 服务、工具链、脚本            |
 
 ### 2. 为什么选择 Node.js 做全栈？
 
@@ -95,6 +98,7 @@ Hello Node.js!
 ```
 
 **REPL 常用命令：**
+
 - `.help` — 显示帮助
 - `.clear` — 清除上下文
 - `.exit` — 退出（或按 Ctrl+C 两次）
@@ -106,13 +110,13 @@ Hello Node.js!
 
 ```javascript
 // hello.js
-console.log('🚀 Hello, Node.js!');
-console.log('Node.js version:', process.version);
-console.log('Platform:', process.platform);
-console.log('Architecture:', process.arch);
-console.log('PID:', process.pid);
-console.log('Current directory:', process.cwd());
-console.log('Memory usage:', process.memoryUsage());
+console.log('🚀 Hello, Node.js!')
+console.log('Node.js version:', process.version)
+console.log('Platform:', process.platform)
+console.log('Architecture:', process.arch)
+console.log('PID:', process.pid)
+console.log('Current directory:', process.cwd())
+console.log('Memory usage:', process.memoryUsage())
 ```
 
 运行：
@@ -129,27 +133,27 @@ node hello.js
 // process-demo.js
 
 // 1. 环境变量
-console.log('HOME:', process.env.HOME);
-console.log('PATH:', process.env.PATH);
+console.log('HOME:', process.env.HOME)
+console.log('PATH:', process.env.PATH)
 
 // 2. 命令行参数
 // 运行: node process-demo.js --name=Node --version=20
-console.log('argv:', process.argv);
+console.log('argv:', process.argv)
 // argv[0] = node 路径
 // argv[1] = 脚本路径（REPL 中无此项）
 // argv[2+] = 自定义参数
 
 // 3. 标准 I/O
-process.stdout.write('请输入你的名字: ');
-process.stdin.once('data', (data) => {
-  console.log(`你好, ${data.toString().trim()}!`);
-  process.exit(0); // 退出程序，0 表示正常退出
-});
+process.stdout.write('请输入你的名字: ')
+process.stdin.once('data', data => {
+  console.log(`你好, ${data.toString().trim()}!`)
+  process.exit(0) // 退出程序，0 表示正常退出
+})
 
 // 4. 退出事件
-process.on('exit', (code) => {
-  console.log(`进程即将退出，退出码: ${code}`);
-});
+process.on('exit', code => {
+  console.log(`进程即将退出，退出码: ${code}`)
+})
 ```
 
 ### 8. 全局对象与模块作用域
@@ -160,10 +164,10 @@ Node.js 中每个文件都是一个独立的**模块**，变量默认不会污�
 // scope-demo.js
 
 // 这些是 Node.js 中每个模块都有的特殊变量
-console.log('__filename:', __filename);  // 当前文件的绝对路径
-console.log('__dirname:', __dirname);    // 当前文件所在目录
-console.log('module:', module);          // 当前模块信息
-console.log('exports:', exports);        // 模块导出对象
+console.log('__filename:', __filename) // 当前文件的绝对路径
+console.log('__dirname:', __dirname) // 当前文件所在目录
+console.log('module:', module) // 当前模块信息
+console.log('exports:', exports) // 模块导出对象
 
 // 注意：在 ESModule 模式下，__filename 和 __dirname 不可用
 // 需要使用 import.meta.url 替代
@@ -199,6 +203,7 @@ node calc.js divide 15 3   # 输出: 5
 ```
 
 **要求**：
+
 - 使用 `process.argv` 解析参数
 - 处理除以零的错误
 - 处理无效操作符的错误

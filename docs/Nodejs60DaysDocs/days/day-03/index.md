@@ -1,5 +1,7 @@
 # Day 03 — Node.js 核心模块（上）：fs、path、os
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 掌握 `fs` 模块的同步/异步/Promise 三种 API

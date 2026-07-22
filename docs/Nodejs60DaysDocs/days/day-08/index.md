@@ -1,5 +1,7 @@
 # Day 08 — 用原生 Node.js 构建 REST API（上）
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 实现一个简易路由器（Router）

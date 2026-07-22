@@ -1,5 +1,7 @@
 # Day 21 — 关系型数据库基础与 PostgreSQL
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 用 Docker 起一套带持久化卷的 PostgreSQL，理解为什么不直接装本机

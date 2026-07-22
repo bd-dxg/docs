@@ -1,5 +1,7 @@
 # Day 19 — NestJS 异常处理与响应标准化
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 看清 NestJS 的异常分层：内置 `HttpException` 体系、未知异常、Node 原生错误

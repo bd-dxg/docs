@@ -1,5 +1,7 @@
 # Day 57 — 性能优化
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - Node.js 性能调优：内存泄漏排查（Heap Snapshot）、CPU Profiling

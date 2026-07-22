@@ -1,5 +1,7 @@
 # Day 51 — 实时通信
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - WebSocket 基础概念和 Socket.io 使用

@@ -1,5 +1,7 @@
 # Day 44 — 云部署实战
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 41 把应用打成了镜像、Day 42 用 compose 把它和 PG/Redis/迁移 job 编排成一键拉起的栈、Day 43 又把「构建 + 推 GHCR」自动化了。但到昨天为止，那个镜像还**躺在 registry 里没服务过任何一个真实请求**——Day 43 的 `deploy` job 是个「形状」：里面只有一行被注释掉的 `ssh prod 'docker compose pull ...'`，因为我诚实地承认：连哪台主机、连哪个库、域名怎么解析，这个学习仓库都还没有。
 >
 > 这一天就是来把这层填满的。核心不是「学某个平台的按钮」——按钮半小时就会点——而是想透几件部署时绕不开、且容易想当然的事：这套镜像**为什么不该上 Vercel**（常驻进程 vs serverless，BullMQ worker 和本地存储直接打架）；托管数据库和托管 Redis **替你扛掉了什么**，又**塞给你什么新坑**（PgBouncer 连接池 + Prisma）；迁移在生产**到底谁来跑**（这里有个 Day 41 镜像留下的真坑）；以及容器里的 `/app/uploads` **为什么不能当生产存储**。

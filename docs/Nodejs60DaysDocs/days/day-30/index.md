@@ -1,5 +1,7 @@
 # Day 30 — 🏆 里程碑：博客系统 API 完整版
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 给 blog-api 装上 **Swagger / OpenAPI** 文档，`/docs` 一打开就是可交互的 API 手册

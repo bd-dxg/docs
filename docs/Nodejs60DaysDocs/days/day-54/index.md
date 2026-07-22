@@ -1,5 +1,7 @@
 # Day 54 — 前端集成与联调
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - Next.js 前端页面快速搭建（看板/列表/仪表盘）

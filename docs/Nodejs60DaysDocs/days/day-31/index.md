@@ -1,5 +1,7 @@
 # Day 31 — 认证基础：Session vs JWT
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > 阶段三（认证、安全与缓存）开篇。今天是**概念地基**——把"登录态怎么记住"这件事彻底想清楚；
 > Day 32 才动手把 JWT、bcrypt、双 Token 接进 blog-api。
 

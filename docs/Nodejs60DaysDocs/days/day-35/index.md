@@ -1,5 +1,7 @@
 # Day 35 — Web 安全防护
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 32 我们做了"证明你是谁"（登录、发 token），Day 33 做"你能干什么"（RBAC），Day 34 做"借别人的平台证明你是谁"（OAuth）。
 > Day 35 要换个视角：**就算认证授权全写对了，还有哪些路能把你的系统搞垮、把用户数据搞走。**
 >

@@ -1,5 +1,7 @@
 # Day 05 — 事件循环深度解析
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 彻底理解 Node.js 事件循环的六个阶段

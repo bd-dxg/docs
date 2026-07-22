@@ -1,5 +1,7 @@
 # Day 11 — TypeScript 在 Node.js 中的使用
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 配置 TypeScript 服务端开发环境

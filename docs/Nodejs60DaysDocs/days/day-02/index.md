@@ -1,5 +1,7 @@
 # Day 02 — 模块系统与包管理
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 深入理解 CommonJS 和 ESModule 两种模块系统

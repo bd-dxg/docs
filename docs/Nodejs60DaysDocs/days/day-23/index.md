@@ -1,5 +1,7 @@
 # Day 23 — SQL 进阶：索引与性能
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 看懂 `EXPLAIN` 和 `EXPLAIN ANALYZE` 的输出，能从计划里读出"哪里慢"

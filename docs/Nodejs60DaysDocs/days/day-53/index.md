@@ -1,5 +1,7 @@
 # Day 53 — 数据看板与统计
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 用 SQL 聚合查询实现任务完成趋势数据

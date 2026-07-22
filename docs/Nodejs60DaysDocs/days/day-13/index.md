@@ -1,5 +1,7 @@
 # Day 13 — 进程管理与 Worker Threads
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 理解 `child_process` 模块的四种创建方式

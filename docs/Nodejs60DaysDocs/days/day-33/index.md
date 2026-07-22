@@ -1,5 +1,7 @@
 # Day 33 — RBAC 权限模型
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 > Day 32 解决了**认证**（你是谁）。Day 33 解决**授权**（你能干什么）：给 posts 加权限——
 > 创建要登录、改/删要是作者本人或 admin，外加一个纯角色的 admin-only 接口。
 

@@ -1,5 +1,7 @@
 # Day 58 — 系统设计思维
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 理解 CAP 定理、BASE 理论、微服务 vs 单体架构

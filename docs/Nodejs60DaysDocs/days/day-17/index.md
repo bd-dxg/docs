@@ -1,5 +1,7 @@
 # Day 17 — NestJS 深入：请求生命周期
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 看懂 Middleware → Guard → Interceptor → Pipe → Handler → Filter 整条流水线

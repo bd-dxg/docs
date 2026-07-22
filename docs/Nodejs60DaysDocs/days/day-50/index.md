@@ -1,5 +1,7 @@
 # Day 50 — 看板与列表视图 API
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 看板数据聚合查询（按状态分组）

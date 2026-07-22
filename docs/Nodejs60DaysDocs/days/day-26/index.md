@@ -1,5 +1,7 @@
 # Day 26 — Prisma ORM 进阶
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - 把事务的本质（ACID 中的 A 和 I）和 Prisma 的两套事务 API 想清楚

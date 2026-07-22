@@ -1,5 +1,7 @@
 # Day 55 — 🏆 里程碑：SaaS 任务管理平台部署上线
 
+> 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
+
 ## 📋 今日目标
 
 - Docker 容器化打包和 CI/CD 配置
