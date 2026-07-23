@@ -3,20 +3,20 @@ title: Day 01 — 环境搭建与 Node.js 初印象
 description: 安装 Node.js 环境，理解 Node.js 运行时与全栈开发基础
 ---
 
-# Day 01 — 环境搭建与 Node.js 初印象
+# Day 01 — 环境搭建与 Node.js 初印象 {#day-01}
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
 
-## 📋 今日目标
+## 📋 今日目标 {#goals}
 
 - 安装 Node.js 开发环境
 - 理解 Node.js 是什么、为什么它适合全栈开发
 - 运行第一个 Node.js 程序
 - 熟悉 REPL 和命令行工具
 
-## 📖 核心知识点
+## 📖 核心知识点 {#core-knowledge}
 
-### 1. Node.js 是什么？
+### 1. Node.js 是什么？ {#what-is-nodejs}
 
 Node.js 是一个基于 Chrome V8 引擎的 **JavaScript 运行时**。它让 JavaScript 脱离浏览器，可以运行在服务端。
 
@@ -33,7 +33,7 @@ Node.js 是一个基于 Chrome V8 引擎的 **JavaScript 运行时**。它让 Ja
 | 模块系统         | ESModule                   | CommonJS + ESModule               |
 | 用途             | UI 交互、页面渲染          | API 服务、工具链、脚本            |
 
-### 2. 为什么选择 Node.js 做全栈？
+### 2. 为什么选择 Node.js 做全栈？ {#why-nodejs}
 
 对于前端工程师来说，Node.js 是转全栈的**最短路径**：
 
@@ -42,7 +42,7 @@ Node.js 是一个基于 Chrome V8 引擎的 **JavaScript 运行时**。它让 Ja
 - **市场需求**：Next.js 全栈框架的流行让 Node.js 全栈工程师需求暴增
 - **思维连贯**：前端对异步编程、事件驱动的理解可以无缝迁移
 
-### 3. 安装 Node.js <Badge type="tip" text="改动" />
+### 3. 安装 Node.js <Badge type="tip" text="改动" /> {#install-nodejs}
 
 ::: details 原版
 **推荐使用 nvm（Node Version Manager）管理 Node.js 版本：**
@@ -76,7 +76,7 @@ pnpm --version
 
 :::
 
-#### 3.1 推荐安装方式 [pnpm](https://pnpm.io/)
+#### 3.1 推荐安装方式 [pnpm](https://pnpm.io/) {#install-pnpm}
 
 管理 node 版本, 当前使用最新版 `pnpm 11` 版本 作为介绍
 
@@ -105,7 +105,7 @@ pnpm runtime set node 22 -g
 > [!tip] 提示
 > 自 `v11.0.0` 起，安装 Node.js 运行时（通过 `pnpm runtime set node …` 或 `node@runtime:<version>`）不会从 Node.js 归档中提取捆绑的 `npm`、`npx` 和 `corepack`。 这样一来，`pnpm` 在运行时安装期间需要哈希处理、写入 CAS 和链接的文件数量大致减少了一半。 如果仍然需要 `npm`，请使用 `pnpm add -g npm` 单独安装它。
 
-#### 3.2 使用[viteplus](https://viteplus.dev/guide/)管理
+#### 3.2 使用[viteplus](https://viteplus.dev/guide/)管理 {#install-viteplus}
 
 vitePlus又被叫做 vite+, 是尤雨溪推荐的前端工程统一化工具,是对`pnpm`、`yarn`和`npm`进一步的封装
 
@@ -130,7 +130,7 @@ curl -fsSL https://vite.plus | bash
 vp env use 20
 ```
 
-### 4. 配置开发环境 <Badge type="tip" text="改动" />
+### 4. 配置开发环境 <Badge type="tip" text="改动" /> {#setup-ide}
 
 ::: details 原版
 
@@ -148,7 +148,7 @@ vp env use 20
 - **[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)** — API 测试（类似 Postman）
 - **[Oxc](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode)** - 新一代lint和fmt工具,可配合vitePlus使用,也可以单独使用
 
-### 5. Node.js REPL
+### 5. Node.js REPL {#nodejs-repl}
 
 REPL（Read-Eval-Print-Loop）是 Node.js 的交互式命令行：
 
@@ -175,7 +175,7 @@ Hello Node.js!
 - `.exit` — 退出（或按 Ctrl+C 两次）
 - `Tab` — 自动补全
 
-### 6. 第一个 Node.js 程序
+### 6. 第一个 Node.js 程序 {#first-program}
 
 创建文件 `hello.js`：
 
@@ -196,7 +196,7 @@ console.log('Memory usage:', process.memoryUsage())
 node hello.js
 ```
 
-### 7. process 对象
+### 7. process 对象 {#process-object}
 
 `process` 是 Node.js 最重要的全局对象之一，没有浏览器等价物：
 
@@ -227,7 +227,7 @@ process.on('exit', code => {
 })
 ```
 
-### 8. 全局对象与模块作用域
+### 8. 全局对象与模块作用域 {#module-scope}
 
 Node.js 中每个文件都是一个独立的**模块**，变量默认不会污染全局：
 
@@ -244,9 +244,9 @@ console.log('exports:', exports) // 模块导出对象
 // 需要使用 import.meta.url 替代
 ```
 
-## 💻 实践练习
+## 💻 实践练习 {#practice}
 
-### 练习 1：系统信息收集器 <Badge type="tip" text="改动" />
+### 练习 1：系统信息收集器 <Badge type="tip" text="改动" /> {#exercise-1}
 
 编写一个 `system-info.js` 脚本，收集并美化输出以下系统信息：
 
@@ -264,7 +264,7 @@ console.log('exports:', exports) // 模块导出对象
 <<< ./solutions/01-system-info.js
 :::
 
-### 练习 2：命令行计算器 <Badge type="tip" text="改动" />
+### 练习 2：命令行计算器 <Badge type="tip" text="改动" /> {#exercise-2}
 
 编写一个 `calc.js`，支持通过命令行参数进行计算：
 
@@ -286,7 +286,7 @@ node calc.js divide 15 3   # 输出: 5
 <<< ./solutions/02-calc.js
 :::
 
-### 练习 3：交互式问候程序 <Badge type="tip" text="改动" />
+### 练习 3：交互式问候程序 <Badge type="tip" text="改动" /> {#exercise-3}
 
 编写一个 `greeter.js`，使用 `process.stdin` 和 `process.stdout` 实现：
 
@@ -298,7 +298,7 @@ node calc.js divide 15 3   # 输出: 5
 <<< ./solutions/03-greeter.js
 :::
 
-## ✅ 今日产出
+## ✅ 今日产出 {#summary}
 
 - [ ] 安装好 Node.js 、pnpm、VS Code 插件
 - [ ] 完成 `hello.js` 和 `process-demo.js`
@@ -306,7 +306,7 @@ node calc.js divide 15 3   # 输出: 5
 - [ ] 完成练习 2（命令行计算器）
 - [ ] 完成练习 3（交互式问候程序）
 
-## 📚 延伸阅读
+## 📚 延伸阅读 {#further-reading}
 
 - [Node.js 官方文档 - Getting Started](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
 - [Node.js 官方文档 - process](https://nodejs.org/docs/latest-v20.x/api/process.html)
