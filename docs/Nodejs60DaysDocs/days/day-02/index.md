@@ -3,20 +3,20 @@ title: Day 02 — 模块系统与包管理
 description: 深入理解 CommonJS/ESM 模块系统、package.json 配置与 npm/pnpm 包管理
 ---
 
-# Day 02 — 模块系统与包管理
+# Day 02 — 模块系统与包管理 {#day-02}
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
 
-## 📋 今日目标
+## 📋 今日目标 {#goals}
 
 - 深入理解 CommonJS 和 ESModule 两种模块系统
 - 掌握 `package.json` 的核心配置
 - 熟练使用 npm/pnpm 进行包管理
 - 理解模块解析算法
 
-## 📖 核心知识点
+## 📖 核心知识点 {#core-knowledge}
 
-### 1. 为什么需要模块系统？
+### 1. 为什么需要模块系统？ {#why-module-system}
 
 在浏览器早期，所有 JS 共享全局作用域，容易造成命名冲突。Node.js 从一开始就引入了模块系统 — 每个文件是一个独立的模块，拥有自己的作用域。
 
@@ -31,7 +31,7 @@ Node.js 支持两种模块系统：
 | 循环依赖        | 返回部分导出                   | 返回引用（live binding）       |
 | Top-level await | ❌ 不支持                      | ✅ 支持                        |
 
-### 2. CommonJS（CJS）
+### 2. CommonJS（CJS）<Badge type="tip" text="改动" /> {#commonjs-cjs}
 
 这是 Node.js 的传统模块系统：
 :::code-group
@@ -78,12 +78,13 @@ const b = require('./module')
 console.log(a === b) // true，同一个对象
 ```
 
-### 3. ESModule（ESM）
+### 3. ESModule（ESM）<Badge type="tip" text="改动" /> {#esmodule-esm}
 
 这是 JavaScript 的官方模块标准，也是未来的方向：
+:::code-group
 
-```javascript
-// math.mjs（或在 package.json 中设置 "type": "module"）
+```javascript [math.mjs]
+//在 package.json 中设置 "type": "module"
 
 // 命名导出
 export function add(a, b) {
@@ -102,9 +103,7 @@ export default class Calculator {
 }
 ```
 
-```javascript
-// app.mjs — 导入
-
+```javascript [app.mjs]
 // 命名导入
 import { add, multiply } from './math.mjs'
 
@@ -118,22 +117,25 @@ import * as math from './math.mjs'
 const module = await import('./math.mjs')
 ```
 
+:::
+
 **如何在 Node.js 中启用 ESM？**
 
-```json
-// package.json — 方式一：设置 type
+方式一：设置 type
+
+```json [package.json]
 {
   "type": "module"
 }
 ```
 
-```
-// 方式二：使用 .mjs 文件扩展名
-math.mjs  → ESModule
-math.cjs  → CommonJS
-```
+方式二：使用 .mjs 文件扩展名
 
-### 4. ESM 中获取 __filename 和 __dirname
+math.mjs → ESModule
+
+math.cjs → CommonJS
+
+### 4. ESM 中获取`__filename`和`__dirname` {#esm-filename-dirname}
 
 ESM 中没有 `__filename` 和 `__dirname`，需要这样获取：
 
@@ -148,11 +150,11 @@ console.log(__filename) // /Users/you/project/app.js
 console.log(__dirname) // /Users/you/project
 ```
 
-### 5. package.json 详解
+### 5. package.json 详解 <Badge type="tip" text="改动" /> {#package-json}
 
 `package.json` 是 Node.js 项目的核心配置文件：
 
-```json
+```json [package.json]
 {
   "name": "my-project",
   "version": "1.0.0",
@@ -177,18 +179,19 @@ console.log(__dirname) // /Users/you/project
 }
 ```
 
-**版本号语义（SemVer）：**
+**版本号语义（SemVer）**:
 
-```
 主版本号.次版本号.修订号
+
 MAJOR.MINOR.PATCH
 
 ^4.18.2 → 允许 >=4.18.2 且 <5.0.0（次版本和修订可升级）
-~4.18.2 → 允许 >=4.18.2 且 <4.19.0（仅修订可升级）
-4.18.2  → 精确锁定（不推荐用于大多数依赖）
-```
 
-### 6. npm / pnpm 常用命令
+~4.18.2 → 允许 >=4.18.2 且 <4.19.0（仅修订可升级）
+
+4.18.2 → 精确锁定（不推荐用于大多数依赖）
+
+### 6. npm / pnpm 常用命令 {#npm-pnpm-commands}
 
 ```bash
 # 初始化项目
@@ -223,29 +226,27 @@ pnpm list --depth=0
 - **npm**：Node.js 内置，生态最广
 - **yarn**：Facebook 出品，并行安装快
 
-### 7. 模块解析算法
+### 7. 模块解析算法 {#module-resolution}
 
 当你写 `require('express')` 或 `import express from 'express'` 时，Node.js 是怎样找到模块的？
 
-```
-require('./math')    → 相对路径，查找当前目录下的 math.js / math/index.js
-require('express')   → 非相对路径，按以下顺序查找：
-  1. Node.js 内置模块（fs, path, http...）
-  2. node_modules/express （当前目录）
-  3. ../node_modules/express（父目录）
-  4. ../../node_modules/express（继续向上）
-  5. ... 直到根目录
-```
+require('./math') → 相对路径，查找当前目录下的 math.js / math/index.js
 
----
+require('express') → 非相对路径，按以下顺序查找：
 
-## 💻 实践练习
+1. Node.js 内置模块（fs, path, http...）
+2. node_modules/express （当前目录）
+3. ../node_modules/express（父目录）
+4. ../../node_modules/express（继续向上）
+5. ... 直到根目录
 
-### 练习 1：模块化工具库
+## 💻 实践练习 <Badge type="tip" text="改动" /> {#practice}
+
+### 练习 1：模块化工具库 {#exercise-1}
 
 创建一个 `utils` 工具库，包含以下模块：
 
-```
+```text
 utils/
 ├── index.js          # 统一导出
 ├── string.js         # 字符串工具
@@ -261,7 +262,20 @@ utils/
 - 分别用 CJS 和 ESM 两种方式实现
 - `index.js` 统一导出所有工具函数
 
-### 练习 2：依赖分析器
+:::details 答案 string.js
+<<< ./solutions/01-utils-esm/string.mjs
+:::
+:::details 答案 array.js
+<<< ./solutions/01-utils-esm/array.mjs
+:::
+:::details 答案 date.js
+<<< ./solutions/01-utils-esm/date.mjs
+:::
+:::details 答案 index.js
+<<< ./solutions/01-utils-esm/index.mjs
+:::
+
+### 练习 2：依赖分析器 {#exercise-2}
 
 编写一个 `deps-analyzer.js` 脚本：
 
@@ -271,9 +285,11 @@ utils/
 4. 检查是否有 `package-lock.json` 或 `pnpm-lock.yaml`
 5. 输出统计信息（总依赖数量等）
 
----
+:::details 答案 deps-analyzer.js
+<<< ./solutions/02-deps-analyzer.js
+:::
 
-## ✅ 今日产出
+## ✅ 今日产出 {#summary}
 
 - [ ] 理解 CJS 和 ESM 两种模块系统的区别
 - [ ] 创建一个使用 ESM 的 Node.js 项目
@@ -281,13 +297,9 @@ utils/
 - [ ] 完成练习 2（依赖分析器）
 - [ ] 尝试用 `node --watch` 体验文件热重载
 
-## 📚 延伸阅读
+## 📚 延伸阅读 {#further-reading}
 
 - [Node.js 官方文档 - Modules: CommonJS](https://nodejs.org/docs/latest-v20.x/api/modules.html)
 - [Node.js 官方文档 - Modules: ESM](https://nodejs.org/docs/latest-v20.x/api/esm.html)
 - [pnpm 官方文档](https://pnpm.io/)
 - [SemVer 语义版本规范](https://semver.org/lang/zh-CN/)
-
----
-
-[⬅️ Day 01 — 环境搭建](../day-01/) | [➡️ Day 03 — 核心模块（上）](../day-03/)
