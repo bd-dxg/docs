@@ -98,7 +98,7 @@ pnpm runtime set node 22 -g
 ```
 
 > [!tip] 提示
-> 自 v11.0.0 起，安装 Node.js 运行时（通过 `pnpm runtime set node …` 或 `node@runtime:<version>`）不会从 Node.js 归档中提取捆绑的 npm、npx 和 corepack。 这样一来，pnpm 在运行时安装期间需要哈希处理、写入 CAS 和链接的文件数量大致减少了一半。 如果仍然需要 npm，请使用 pnpm add -g npm 单独安装它。
+> 自 `v11.0.0` 起，安装 Node.js 运行时（通过 `pnpm runtime set node …` 或 `node@runtime:<version>`）不会从 Node.js 归档中提取捆绑的 `npm`、`npx` 和 `corepack`。 这样一来，`pnpm` 在运行时安装期间需要哈希处理、写入 CAS 和链接的文件数量大致减少了一半。 如果仍然需要 `npm`，请使用 `pnpm add -g npm` 单独安装它。
 
 #### 3.2 使用[viteplus](https://viteplus.dev/guide/)管理
 
