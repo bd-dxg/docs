@@ -1,3 +1,8 @@
+---
+title: Day 52 — 通知与异步任务
+description: 设计通知系统与 BullMQ 异步邮件发送
+---
+
 # Day 52 — 通知与异步任务
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 22 — SQL 进阶：JOIN、子查询与聚合
+description: 掌握 JOIN/GROUP BY/子查询与聚合函数
+---
+
 # Day 22 — SQL 进阶：JOIN、子查询与聚合
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

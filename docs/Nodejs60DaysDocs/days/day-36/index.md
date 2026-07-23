@@ -1,3 +1,8 @@
+---
+title: Day 36 — Redis 基础与缓存策略
+description: 掌握 Redis 数据结构与缓存穿透/击穿/雪崩
+---
+
 # Day 36 — Redis 基础与缓存策略
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

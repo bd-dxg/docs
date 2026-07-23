@@ -1,3 +1,8 @@
+---
+title: Day 38 — 消息队列与异步任务
+description: 用 BullMQ 实现异步任务与可靠队列
+---
+
 # Day 38 — 消息队列与异步任务
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

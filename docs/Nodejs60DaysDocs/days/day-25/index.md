@@ -1,3 +1,8 @@
+---
+title: Day 25 — Prisma ORM 入门
+description: 理解 ORM 价值，掌握 Prisma Schema 与 CRUD
+---
+
 # Day 25 — Prisma ORM 入门
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

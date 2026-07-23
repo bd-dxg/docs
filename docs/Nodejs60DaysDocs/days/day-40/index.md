@@ -1,3 +1,8 @@
+---
+title: Day 40 — 🏆 里程碑：安全加固版博客系统
+description: 加固认证安全与纵深防御体系
+---
+
 # Day 40 — 🏆 里程碑：安全加固版博客系统（v2.0）
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

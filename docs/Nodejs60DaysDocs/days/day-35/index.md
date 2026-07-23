@@ -1,3 +1,8 @@
+---
+title: Day 35 — Web 安全防护
+description: 掌握 OWASP Top 10 与 Helmet/限流防护
+---
+
 # Day 35 — Web 安全防护
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

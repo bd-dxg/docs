@@ -1,3 +1,8 @@
+---
+title: Day 16 — NestJS 入门：架构与核心概念
+description: 理解 IoC/DI、装饰器与模块职责
+---
+
 # Day 16 — NestJS 入门：架构与核心概念
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 43 — CI/CD 流水线（GitHub Actions）
+description: 自动化 CI 质量闸门与镜像发布
+---
+
 # Day 43 — CI/CD 流水线（GitHub Actions）
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

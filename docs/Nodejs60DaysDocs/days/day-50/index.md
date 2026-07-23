@@ -1,3 +1,8 @@
+---
+title: Day 50 — 看板与列表视图 API
+description: 实现看板聚合、列表筛选与拖拽排序
+---
+
 # Day 50 — 看板与列表视图 API
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 49 — 项目与任务 CRUD
+description: 实现任务管理核心业务与状态流转
+---
+
 # Day 49 — 项目与任务 CRUD
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

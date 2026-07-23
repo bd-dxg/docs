@@ -1,3 +1,8 @@
+---
+title: Day 46 — 项目规划与架构设计
+description: 设计 SaaS 任务管理平台的数据模型与架构
+---
+
 # Day 46 — 项目规划与架构设计
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

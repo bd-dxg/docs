@@ -1,3 +1,8 @@
+---
+title: Day 14 — 错误处理与调试技巧
+description: 设计错误体系，掌握全局错误捕获与调试
+---
+
 # Day 14 — 错误处理与调试技巧
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

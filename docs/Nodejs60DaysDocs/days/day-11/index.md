@@ -1,3 +1,8 @@
+---
+title: Day 11 — TypeScript 在 Node.js 中的使用
+description: 配置 TS 服务端环境，重写 TODO API
+---
+
 # Day 11 — TypeScript 在 Node.js 中的使用
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

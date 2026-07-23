@@ -1,3 +1,8 @@
+---
+title: Day 18 — NestJS 数据验证与 DTO
+description: 掌握 class-validator 与 ValidationPipe 协作
+---
+
 # Day 18 — NestJS 数据验证与 DTO
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

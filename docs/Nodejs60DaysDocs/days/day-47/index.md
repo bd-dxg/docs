@@ -1,3 +1,8 @@
+---
+title: Day 47 — 项目脚手架与基础设施
+description: 搭建 Next.js + tRPC + Prisma 项目骨架
+---
+
 # Day 47 — 项目脚手架与基础设施
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

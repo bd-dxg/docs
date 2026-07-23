@@ -1,3 +1,8 @@
+---
+title: Day 58 — 系统设计思维
+description: 理解 CAP 定理与经典系统设计题
+---
+
 # Day 58 — 系统设计思维
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 33 — RBAC 权限模型
+description: 实现角色校验与资源级权限控制
+---
+
 # Day 33 — RBAC 权限模型
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 37 — Redis 进阶应用
+description: 实现排行榜、分布式锁与高级缓存策略
+---
+
 # Day 37 — Redis 进阶应用
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

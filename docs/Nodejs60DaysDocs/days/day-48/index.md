@@ -1,3 +1,8 @@
+---
+title: Day 48 — 用户系统与团队管理
+description: 实现注册登录、工作区 CRUD 与 RBAC
+---
+
 # Day 48 — 用户系统与团队管理
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

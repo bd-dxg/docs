@@ -1,3 +1,8 @@
+---
+title: Day 34 — OAuth 2.0 与第三方登录
+description: 接入 GitHub 登录与授权码模式
+---
+
 # Day 34 — OAuth 2.0 与第三方登录
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

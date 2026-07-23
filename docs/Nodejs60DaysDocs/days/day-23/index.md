@@ -1,3 +1,8 @@
+---
+title: Day 23 — SQL 进阶：索引与性能
+description: 理解 B-tree 索引与 EXPLAIN 查询优化
+---
+
 # Day 23 — SQL 进阶：索引与性能
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

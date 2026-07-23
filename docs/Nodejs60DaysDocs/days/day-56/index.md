@@ -1,3 +1,8 @@
+---
+title: Day 56 — 测试策略与实战
+description: 掌握测试金字塔与单元/集成/E2E 测试
+---
+
 # Day 56 — 测试策略与实战
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

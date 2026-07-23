@@ -1,3 +1,8 @@
+---
+title: Day 05 — 事件循环深度解析
+description: 深入理解事件循环六阶段与 libuv 机制
+---
+
 # Day 05 — 事件循环深度解析
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 53 — 数据看板与统计
+description: 实现任务统计与团队工作量分布
+---
+
 # Day 53 — 数据看板与统计
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

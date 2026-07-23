@@ -1,3 +1,8 @@
+---
+title: Day 39 — 文件上传与存储
+description: 实现 Multer 上传、Sharp 处理与 S3 存储
+---
+
 # Day 39 — 文件上传与存储
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

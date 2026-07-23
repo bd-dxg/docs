@@ -1,8 +1,13 @@
+---
+title: Day 04 — Node.js 核心模块（下）：events、stream、Buffer
+description: 理解事件驱动、Buffer 二进制及流式处理
+---
+
 # Day 04 — Node.js 核心模块（下）：events、stream、Buffer
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
 
-## 📋 今日目标
+## 📋 今日目标 {#Today-Target}
 
 - 理解 EventEmitter 事件驱动编程模型
 - 掌握 Buffer 处理二进制数据
@@ -16,56 +21,56 @@
 Node.js 的核心设计哲学是**事件驱动**。`EventEmitter` 是 Node.js 中大量核心模块的基类（如 `http.Server`、`fs.ReadStream` 等）。
 
 ```javascript
-import { EventEmitter } from 'node:events';
+import { EventEmitter } from 'node:events'
 
-const emitter = new EventEmitter();
+const emitter = new EventEmitter()
 
 // 注册事件监听器
-emitter.on('greet', (name) => {
-  console.log(`Hello, ${name}!`);
-});
+emitter.on('greet', name => {
+  console.log(`Hello, ${name}!`)
+})
 
 // 一次性监听（只触发一次）
 emitter.once('init', () => {
-  console.log('初始化完成');
-});
+  console.log('初始化完成')
+})
 
 // 触发事件
-emitter.emit('greet', 'Node.js');  // Hello, Node.js!
-emitter.emit('init');               // 初始化完成
-emitter.emit('init');               // （不会再输出）
+emitter.emit('greet', 'Node.js') // Hello, Node.js!
+emitter.emit('init') // 初始化完成
+emitter.emit('init') // （不会再输出）
 ```
 
 **实际应用 — 自定义事件类：**
 
 ```javascript
-import { EventEmitter } from 'node:events';
+import { EventEmitter } from 'node:events'
 
 class TaskRunner extends EventEmitter {
   constructor(tasks) {
-    super();
-    this.tasks = tasks;
-    this.completed = 0;
+    super()
+    this.tasks = tasks
+    this.completed = 0
   }
 
   async run() {
-    this.emit('start', { total: this.tasks.length });
+    this.emit('start', { total: this.tasks.length })
 
     for (const task of this.tasks) {
       try {
-        this.emit('taskStart', { name: task.name });
-        await task.execute();
-        this.completed++;
+        this.emit('taskStart', { name: task.name })
+        await task.execute()
+        this.completed++
         this.emit('taskComplete', {
           name: task.name,
           progress: this.completed / this.tasks.length,
-        });
+        })
       } catch (error) {
-        this.emit('taskError', { name: task.name, error });
+        this.emit('taskError', { name: task.name, error })
       }
     }
 
-    this.emit('finish', { total: this.tasks.length, completed: this.completed });
+    this.emit('finish', { total: this.tasks.length, completed: this.completed })
   }
 }
 
@@ -74,28 +79,28 @@ const runner = new TaskRunner([
   { name: '下载数据', execute: () => new Promise(r => setTimeout(r, 1000)) },
   { name: '处理数据', execute: () => new Promise(r => setTimeout(r, 500)) },
   { name: '保存结果', execute: () => new Promise(r => setTimeout(r, 300)) },
-]);
+])
 
-runner.on('start', ({ total }) => console.log(`开始执行 ${total} 个任务`));
+runner.on('start', ({ total }) => console.log(`开始执行 ${total} 个任务`))
 runner.on('taskComplete', ({ name, progress }) => {
-  console.log(`✅ ${name} — ${(progress * 100).toFixed(0)}%`);
-});
+  console.log(`✅ ${name} — ${(progress * 100).toFixed(0)}%`)
+})
 runner.on('finish', ({ total, completed }) => {
-  console.log(`🎉 完成 ${completed}/${total} 个任务`);
-});
+  console.log(`🎉 完成 ${completed}/${total} 个任务`)
+})
 
-await runner.run();
+await runner.run()
 ```
 
 **EventEmitter 常用方法：**
 
 ```javascript
-emitter.on(event, fn)        // 注册监听器
-emitter.once(event, fn)      // 一次性监听器
-emitter.off(event, fn)       // 移除监听器（需传入同一函数引用）
+emitter.on(event, fn) // 注册监听器
+emitter.once(event, fn) // 一次性监听器
+emitter.off(event, fn) // 移除监听器（需传入同一函数引用）
 emitter.removeAllListeners() // 移除所有监听器
 emitter.listenerCount(event) // 获取监听器数量
-emitter.eventNames()         // 获取所有事件名
+emitter.eventNames() // 获取所有事件名
 ```
 
 ### 2. Buffer — 二进制数据处理
@@ -104,33 +109,29 @@ Buffer 是 Node.js 处理二进制数据的核心类。在前端你很少接触�
 
 ```javascript
 // 创建 Buffer
-const buf1 = Buffer.alloc(10);              // 10 字节，填充 0
-const buf2 = Buffer.from('Hello');           // 从字符串创建
-const buf3 = Buffer.from([0x48, 0x69]);      // 从字节数组创建
-const buf4 = Buffer.from('你好', 'utf-8');    // 指定编码
+const buf1 = Buffer.alloc(10) // 10 字节，填充 0
+const buf2 = Buffer.from('Hello') // 从字符串创建
+const buf3 = Buffer.from([0x48, 0x69]) // 从字节数组创建
+const buf4 = Buffer.from('你好', 'utf-8') // 指定编码
 
 // Buffer 与字符串互转
-const buf = Buffer.from('Node.js is awesome');
-console.log(buf.toString('utf-8'));     // 'Node.js is awesome'
-console.log(buf.toString('base64'));    // 'Tm9kZS5qcyBpcyBhd2Vzb21l'
-console.log(buf.toString('hex'));       // '4e6f64652e6a7320...'
+const buf = Buffer.from('Node.js is awesome')
+console.log(buf.toString('utf-8')) // 'Node.js is awesome'
+console.log(buf.toString('base64')) // 'Tm9kZS5qcyBpcyBhd2Vzb21l'
+console.log(buf.toString('hex')) // '4e6f64652e6a7320...'
 
 // Buffer 操作
-console.log(buf.length);               // 字节长度（非字符长度！）
-console.log(buf.slice(0, 7).toString()); // 'Node.js'
+console.log(buf.length) // 字节长度（非字符长度！）
+console.log(buf.slice(0, 7).toString()) // 'Node.js'
 
 // 编码注意事项
-const chinese = Buffer.from('你好世界');
-console.log(chinese.length);           // 12（UTF-8 中每个中文 3 字节）
-console.log('你好世界'.length);         // 4（字符长度）
+const chinese = Buffer.from('你好世界')
+console.log(chinese.length) // 12（UTF-8 中每个中文 3 字节）
+console.log('你好世界'.length) // 4（字符长度）
 
 // Buffer 拼接
-const combined = Buffer.concat([
-  Buffer.from('Hello'),
-  Buffer.from(' '),
-  Buffer.from('World'),
-]);
-console.log(combined.toString()); // 'Hello World'
+const combined = Buffer.concat([Buffer.from('Hello'), Buffer.from(' '), Buffer.from('World')])
+console.log(combined.toString()) // 'Hello World'
 ```
 
 ### 3. Stream — 流式处理
@@ -141,46 +142,46 @@ Stream 是 Node.js 最强大也最容易被忽视的特性。**流的核心思�
 
 **四种流类型：**
 
-| 类型 | 说明 | 示例 |
-|------|------|------|
-| Readable | 可读流 | `fs.createReadStream`、`http.IncomingMessage` |
-| Writable | 可写流 | `fs.createWriteStream`、`http.ServerResponse` |
-| Duplex | 双工流（可读可写） | `net.Socket`、`WebSocket` |
-| Transform | 转换流 | `zlib.createGzip`、`crypto.createCipher` |
+| 类型      | 说明               | 示例                                          |
+| --------- | ------------------ | --------------------------------------------- |
+| Readable  | 可读流             | `fs.createReadStream`、`http.IncomingMessage` |
+| Writable  | 可写流             | `fs.createWriteStream`、`http.ServerResponse` |
+| Duplex    | 双工流（可读可写） | `net.Socket`、`WebSocket`                     |
+| Transform | 转换流             | `zlib.createGzip`、`crypto.createCipher`      |
 
 ```javascript
-import fs from 'node:fs';
+import fs from 'node:fs'
 
 // ============ Readable Stream ============
 
 const readStream = fs.createReadStream('./large-file.log', {
   encoding: 'utf-8',
   highWaterMark: 64 * 1024, // 每次读取 64KB
-});
+})
 
-readStream.on('data', (chunk) => {
-  console.log(`收到 ${chunk.length} 字节`);
-});
+readStream.on('data', chunk => {
+  console.log(`收到 ${chunk.length} 字节`)
+})
 
 readStream.on('end', () => {
-  console.log('文件读取完成');
-});
+  console.log('文件读取完成')
+})
 
-readStream.on('error', (err) => {
-  console.error('读取错误:', err);
-});
+readStream.on('error', err => {
+  console.error('读取错误:', err)
+})
 
 // ============ Writable Stream ============
 
-const writeStream = fs.createWriteStream('./output.log');
+const writeStream = fs.createWriteStream('./output.log')
 
-writeStream.write('第一行日志\n');
-writeStream.write('第二行日志\n');
-writeStream.end('最后一行日志\n'); // end 写入最后数据并关闭
+writeStream.write('第一行日志\n')
+writeStream.write('第二行日志\n')
+writeStream.end('最后一行日志\n') // end 写入最后数据并关闭
 
 writeStream.on('finish', () => {
-  console.log('写入完成');
-});
+  console.log('写入完成')
+})
 ```
 
 ### 4. pipe — 管道连接
@@ -188,26 +189,19 @@ writeStream.on('finish', () => {
 `pipe` 是连接流的核心方法，它自动处理背压（backpressure）：
 
 ```javascript
-import fs from 'node:fs';
-import { createGzip } from 'node:zlib';
-import { pipeline } from 'node:stream/promises';
+import fs from 'node:fs'
+import { createGzip } from 'node:zlib'
+import { pipeline } from 'node:stream/promises'
 
 // 简单的文件复制
-fs.createReadStream('./input.txt')
-  .pipe(fs.createWriteStream('./output.txt'));
+fs.createReadStream('./input.txt').pipe(fs.createWriteStream('./output.txt'))
 
 // 读取 → 压缩 → 写入
-fs.createReadStream('./large-file.log')
-  .pipe(createGzip())
-  .pipe(fs.createWriteStream('./large-file.log.gz'));
+fs.createReadStream('./large-file.log').pipe(createGzip()).pipe(fs.createWriteStream('./large-file.log.gz'))
 
 // ✅ 推荐：使用 pipeline（自动处理错误和清理）
-await pipeline(
-  fs.createReadStream('./input.txt'),
-  createGzip(),
-  fs.createWriteStream('./input.txt.gz')
-);
-console.log('压缩完成');
+await pipeline(fs.createReadStream('./input.txt'), createGzip(), fs.createWriteStream('./input.txt.gz'))
+console.log('压缩完成')
 ```
 
 ### 5. Transform Stream — 转换流
@@ -215,38 +209,31 @@ console.log('压缩完成');
 自定义转换流可以在读写之间进行数据处理：
 
 ```javascript
-import { Transform } from 'node:stream';
-import fs from 'node:fs';
-import { pipeline } from 'node:stream/promises';
+import { Transform } from 'node:stream'
+import fs from 'node:fs'
+import { pipeline } from 'node:stream/promises'
 
 // 自定义转换流：将文本转为大写
 const upperCase = new Transform({
   transform(chunk, encoding, callback) {
-    this.push(chunk.toString().toUpperCase());
-    callback();
+    this.push(chunk.toString().toUpperCase())
+    callback()
   },
-});
+})
 
 // 自定义转换流：行号添加器
-let lineNumber = 0;
+let lineNumber = 0
 const addLineNumbers = new Transform({
   transform(chunk, encoding, callback) {
-    const lines = chunk.toString().split('\n');
-    const numbered = lines
-      .map((line) => (line ? `${++lineNumber}: ${line}` : ''))
-      .join('\n');
-    this.push(numbered);
-    callback();
+    const lines = chunk.toString().split('\n')
+    const numbered = lines.map(line => (line ? `${++lineNumber}: ${line}` : '')).join('\n')
+    this.push(numbered)
+    callback()
   },
-});
+})
 
 // 组合使用
-await pipeline(
-  fs.createReadStream('./input.txt'),
-  addLineNumbers,
-  upperCase,
-  fs.createWriteStream('./output.txt')
-);
+await pipeline(fs.createReadStream('./input.txt'), addLineNumbers, upperCase, fs.createWriteStream('./output.txt'))
 ```
 
 ---
@@ -258,15 +245,21 @@ await pipeline(
 实现一个 `DownloadManager` 类（继承 EventEmitter），模拟文件下载：
 
 ```javascript
-const manager = new DownloadManager();
+const manager = new DownloadManager()
 
-manager.on('progress', ({ file, percent }) => { /* 进度条 */ });
-manager.on('complete', ({ file, size }) => { /* 完成提示 */ });
-manager.on('error', ({ file, error }) => { /* 错误处理 */ });
+manager.on('progress', ({ file, percent }) => {
+  /* 进度条 */
+})
+manager.on('complete', ({ file, size }) => {
+  /* 完成提示 */
+})
+manager.on('error', ({ file, error }) => {
+  /* 错误处理 */
+})
 
-manager.download('file1.zip');
-manager.download('file2.zip');
-manager.download('file3.zip');
+manager.download('file1.zip')
+manager.download('file2.zip')
+manager.download('file3.zip')
 ```
 
 ### 练习 2：大文件行数统计器
@@ -284,6 +277,7 @@ node csv-to-json.js input.csv output.json
 ```
 
 **要求**：
+
 - 使用流式处理（不将整个文件读入内存）
 - 第一行为表头
 - 正确处理包含逗号的字段（引号包裹）

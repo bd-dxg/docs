@@ -1,3 +1,8 @@
+---
+title: Day 29 — 数据库事务与并发控制
+description: 掌握乐观锁、悲观锁与事务隔离级别
+---
+
 # Day 29 — 数据库事务与并发控制
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 21 — 关系型数据库基础与 PostgreSQL
+description: 用 Docker 起 PostgreSQL，掌握 SQL 五件套
+---
+
 # Day 21 — 关系型数据库基础与 PostgreSQL
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 51 — 实时通信
+description: 用 SSE 实现工作区实时事件流与在线用户
+---
+
 # Day 51 — 实时通信
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

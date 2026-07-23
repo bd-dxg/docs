@@ -1,3 +1,8 @@
+---
+title: Day 44 — 云部署实战
+description: 部署到 Fly.io/Railway，配置生产环境
+---
+
 # Day 44 — 云部署实战
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

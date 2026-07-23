@@ -1,3 +1,8 @@
+---
+title: Day 02 — 模块系统与包管理
+description: 深入理解 CommonJS/ESM 模块系统、package.json 配置与 npm/pnpm 包管理
+---
+
 # Day 02 — 模块系统与包管理
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
@@ -17,59 +22,60 @@
 
 Node.js 支持两种模块系统：
 
-| 特性 | CommonJS (CJS) | ESModule (ESM) |
-|------|----------------|----------------|
-| 语法 | `require()` / `module.exports` | `import` / `export` |
-| 加载时机 | 运行时（同步） | 编译时（静态分析） |
-| 历史 | Node.js 原生支持 | ES2015 标准，Node.js v12+ 支持 |
-| Tree Shaking | ❌ 不支持 | ✅ 支持 |
-| 循环依赖 | 返回部分导出 | 返回引用（live binding） |
-| Top-level await | ❌ 不支持 | ✅ 支持 |
+| 特性            | CommonJS (CJS)                 | ESModule (ESM)                 |
+| --------------- | ------------------------------ | ------------------------------ |
+| 语法            | `require()` / `module.exports` | `import` / `export`            |
+| 加载时机        | 运行时（同步）                 | 编译时（静态分析）             |
+| 历史            | Node.js 原生支持               | ES2015 标准，Node.js v12+ 支持 |
+| Tree Shaking    | ❌ 不支持                      | ✅ 支持                        |
+| 循环依赖        | 返回部分导出                   | 返回引用（live binding）       |
+| Top-level await | ❌ 不支持                      | ✅ 支持                        |
 
 ### 2. CommonJS（CJS）
 
 这是 Node.js 的传统模块系统：
+:::code-group
 
-```javascript
-// math.js — 导出
+```javascript [math.js]
 function add(a, b) {
-  return a + b;
+  return a + b
 }
 
 function multiply(a, b) {
-  return a * b;
+  return a * b
 }
 
 // 方式一：逐个导出
-module.exports.add = add;
-module.exports.multiply = multiply;
+module.exports.add = add
+module.exports.multiply = multiply
 
 // 方式二：整体导出（更常用）
-module.exports = { add, multiply };
+module.exports = { add, multiply }
 ```
 
-```javascript
-// app.js — 导入
-const { add, multiply } = require('./math');
+```javascript [app.js]
+const { add, multiply } = require('./math')
 // 或者
-const math = require('./math');
+const math = require('./math')
 
-console.log(add(2, 3));        // 5
-console.log(math.multiply(4, 5)); // 20
+console.log(add(2, 3)) // 5
+console.log(math.multiply(4, 5)) // 20
 ```
+
+:::
 
 **CJS 的关键特性：**
 
 ```javascript
 // require 是同步的，可以出现在任何位置
 if (process.env.NODE_ENV === 'development') {
-  const debug = require('./debug');  // 条件导入
+  const debug = require('./debug') // 条件导入
 }
 
 // 模块会被缓存 — 多次 require 同一模块只执行一次
-const a = require('./module');
-const b = require('./module');
-console.log(a === b);  // true，同一个对象
+const a = require('./module')
+const b = require('./module')
+console.log(a === b) // true，同一个对象
 ```
 
 ### 3. ESModule（ESM）
@@ -81,16 +87,18 @@ console.log(a === b);  // true，同一个对象
 
 // 命名导出
 export function add(a, b) {
-  return a + b;
+  return a + b
 }
 
 export function multiply(a, b) {
-  return a * b;
+  return a * b
 }
 
 // 默认导出
 export default class Calculator {
-  add(a, b) { return a + b; }
+  add(a, b) {
+    return a + b
+  }
 }
 ```
 
@@ -98,16 +106,16 @@ export default class Calculator {
 // app.mjs — 导入
 
 // 命名导入
-import { add, multiply } from './math.mjs';
+import { add, multiply } from './math.mjs'
 
 // 默认导入
-import Calculator from './math.mjs';
+import Calculator from './math.mjs'
 
 // 全部导入
-import * as math from './math.mjs';
+import * as math from './math.mjs'
 
 // 动态导入（返回 Promise）
-const module = await import('./math.mjs');
+const module = await import('./math.mjs')
 ```
 
 **如何在 Node.js 中启用 ESM？**
@@ -130,14 +138,14 @@ math.cjs  → CommonJS
 ESM 中没有 `__filename` 和 `__dirname`，需要这样获取：
 
 ```javascript
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-console.log(__filename);  // /Users/you/project/app.js
-console.log(__dirname);   // /Users/you/project
+console.log(__filename) // /Users/you/project/app.js
+console.log(__dirname) // /Users/you/project
 ```
 
 ### 5. package.json 详解
@@ -210,6 +218,7 @@ pnpm list --depth=0
 ```
 
 **pnpm vs npm vs yarn：**
+
 - **pnpm**：磁盘空间节省（硬链接），安装速度快，严格的依赖隔离（推荐）
 - **npm**：Node.js 内置，生态最广
 - **yarn**：Facebook 出品，并行安装快
@@ -245,6 +254,7 @@ utils/
 ```
 
 **要求**：
+
 - `string.js`：实现 `capitalize(str)` / `truncate(str, length)` / `slugify(str)`
 - `array.js`：实现 `chunk(arr, size)` / `unique(arr)` / `shuffle(arr)`
 - `date.js`：实现 `formatDate(date)` / `timeAgo(date)` / `isWeekend(date)`

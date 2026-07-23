@@ -1,3 +1,8 @@
+---
+title: Day 01 — 环境搭建与 Node.js 初印象
+description: 安装 Node.js 环境，理解 Node.js 运行时与全栈开发基础
+---
+
 # Day 01 — 环境搭建与 Node.js 初印象
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

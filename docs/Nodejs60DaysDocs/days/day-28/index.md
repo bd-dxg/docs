@@ -1,3 +1,8 @@
+---
+title: Day 28 — 分页、搜索与排序
+description: 掌握 Offset/Cursor 分页与全文搜索
+---
+
 # Day 28 — 分页、搜索与排序
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

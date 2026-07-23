@@ -1,3 +1,8 @@
+---
+title: Day 08 — 用原生 Node.js 构建 REST API（上）
+description: 手写路由器和 JSON 请求体解析
+---
+
 # Day 08 — 用原生 Node.js 构建 REST API（上）
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

@@ -1,3 +1,8 @@
+---
+title: Day 13 — 进程管理与 Worker Threads
+description: 理解多进程/多线程与 CPU 密集型任务处理
+---
+
 # Day 13 — 进程管理与 Worker Threads
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

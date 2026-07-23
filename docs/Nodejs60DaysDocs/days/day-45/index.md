@@ -1,3 +1,8 @@
+---
+title: Day 45 — 日志、监控与健康检查
+description: 实现结构化日志、Sentry 错误上报与监控
+---
+
 # Day 45 — 日志、监控与健康检查
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

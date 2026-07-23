@@ -1,3 +1,8 @@
+---
+title: Day 24 — 数据库建模实战
+description: 掌握范式与反范式，设计完整数据库 schema
+---
+
 # Day 24 — 数据库建模实战
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

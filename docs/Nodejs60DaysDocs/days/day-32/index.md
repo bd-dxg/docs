@@ -1,3 +1,8 @@
+---
+title: Day 32 — JWT 认证实战
+description: 实现 bcrypt 密码哈希与双 Token 认证
+---
+
 # Day 32 — JWT 认证实战
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

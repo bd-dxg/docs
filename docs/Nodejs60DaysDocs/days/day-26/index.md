@@ -1,3 +1,8 @@
+---
+title: Day 26 — Prisma ORM 进阶
+description: 掌握事务、N+1 问题与 Prisma 扩展
+---
+
 # Day 26 — Prisma ORM 进阶
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

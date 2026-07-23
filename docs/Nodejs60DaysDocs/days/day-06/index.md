@@ -1,3 +1,8 @@
+---
+title: Day 06 — 异步编程模式
+description: 掌握 Callback 到 async/await 的演进与并发控制
+---
+
 # Day 06 — 异步编程模式
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

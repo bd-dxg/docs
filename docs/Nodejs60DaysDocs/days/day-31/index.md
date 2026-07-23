@@ -1,3 +1,8 @@
+---
+title: Day 31 — 认证基础：Session vs JWT
+description: 理解认证与授权，对比 Session/JWT 范式
+---
+
 # Day 31 — 认证基础：Session vs JWT
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

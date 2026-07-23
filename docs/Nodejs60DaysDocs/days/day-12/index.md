@@ -1,3 +1,8 @@
+---
+title: Day 12 — RESTful API 设计原则
+description: 掌握 REST 规范、版本化与 OpenAPI 文档
+---
+
 # Day 12 — RESTful API 设计原则
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

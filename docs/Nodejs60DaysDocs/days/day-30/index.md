@@ -1,3 +1,8 @@
+---
+title: Day 30 — 🏆 里程碑：博客系统 API 完整版
+description: 装上 Swagger 文档，完成阶段二收尾
+---
+
 # Day 30 — 🏆 里程碑：博客系统 API 完整版
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

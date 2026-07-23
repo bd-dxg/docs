@@ -1,3 +1,8 @@
+---
+title: Day 59 — 简历项目包装与面试准备
+description: 掌握项目描述技巧与面试高频考点
+---
+
 # Day 59 — 简历项目包装与面试准备
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs

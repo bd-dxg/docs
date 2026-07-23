@@ -1,3 +1,8 @@
+---
+title: Day 42 — Docker Compose 与多服务编排
+description: 编排多服务启动顺序与就绪探针
+---
+
 # Day 42 — Docker Compose 与多服务编排
 
 > 项目作者: [前端小卒](https://space.bilibili.com/17875980) 项目链接: https://github.com/crisweb1994/60-days-nodejs
