@@ -11,8 +11,8 @@ hero:
     alt: 优医问诊H5
   actions:
     - theme: brand
-      text: 快速开始 →
-      link: /PatientH5Note
+      text: 博客站 →
+      link: https://bddxg.top
     - theme: alt
       text: 项目代码 🧑‍💻
       link: https://github.com/bd-dxg/PatientH5
