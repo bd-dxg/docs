@@ -1,4 +1,5 @@
-export default {
+import { type DefaultTheme } from 'vitepress'
+const PatientH5Note: DefaultTheme.SidebarItem = {
   base: '/PatientH5Note',
   text: '优医问诊H5项目课程',
   items: [
@@ -16,3 +17,5 @@ export default {
     { text: '二次开发-问医生', link: '/doctor' },
   ],
 }
+
+export default PatientH5Note

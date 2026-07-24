@@ -1,4 +1,5 @@
-export default {
+import { type DefaultTheme } from 'vitepress'
+const Nodejs60DaysDocs: DefaultTheme.SidebarItem = {
   base: '/Nodejs60DaysDocs/days',
   text: '60天学会Node.js全栈开发',
   items: [
@@ -106,3 +107,5 @@ export default {
     },
   ],
 }
+
+export default Nodejs60DaysDocs
