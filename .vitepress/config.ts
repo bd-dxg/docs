@@ -15,6 +15,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: '优医问诊', link: '/PatientH5Note/' },
       { text: '60天NodeJS', link: '/Nodejs60DaysDocs/days/day-01/' },
+      { text: 'Rust语言圣经', link: '/RustCourse/about-book/' },
     ],
     sidebar,
     outline: 'deep',
