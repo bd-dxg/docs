@@ -9,7 +9,7 @@ const viteConfig = {
     },
   },
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 5000,
     rollupOptions: {
       external: ['gitalk'],
       output: {

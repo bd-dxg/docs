@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { viteConfig, markdownConfig, sidebar } from './configs'
+import { viteConfig, markdownConfig, sidebar, search } from './configs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'docs',
@@ -10,6 +10,7 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk@1.8.0/dist/gitalk.css' }],
   ],
   markdown: markdownConfig,
+
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -18,6 +19,7 @@ export default defineConfig({
       { text: 'Rust语言圣经', link: '/RustCourse/about-book/' },
     ],
     sidebar,
+    search,
     outline: 'deep',
   },
   vite: viteConfig,

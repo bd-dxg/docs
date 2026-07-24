@@ -7,6 +7,8 @@ const markdownConfig: MarkdownOptions = {
   image: {
     lazyLoading: true,
   },
+  // env → bash 映射，消除 'The language "env" is not loaded' 警告
+  languageAlias: { env: 'bash' },
   config(md) {
     md.use(groupIconMdPlugin)
     md.use(taskLists, {
