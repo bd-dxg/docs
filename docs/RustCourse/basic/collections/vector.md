@@ -286,7 +286,7 @@ let mut m: Vec<_> = v.drain(1..=3).collect();
 let v2 = m.split_off(1);        // 指定索引处切分成两个 vec, m: [22], v2: [33, 44]
 ```
 
-当然也可以像[数组切片](/basic/compound-type/array.html#数组切片)的方式获取 vec 的部分元素：
+当然也可以像[数组切片](/RustCourse/basic/compound-type/array#数组切片)的方式获取 vec 的部分元素：
 ```rust
 fn main() {
     let v = vec![11, 22, 33, 44, 55];

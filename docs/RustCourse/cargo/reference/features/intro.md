@@ -37,7 +37,7 @@ webp = []
 
 对此，我们可以理解为： **`bmp` 和 `png` 是开启 `ico` 的先决条件**（注：开启 `ico`，会自动开启 `bmp`, `png`）。
 
-Feature 名称可以包含来自 [Unicode XID standard]() 定义的字母，允许使用 `_` 或 `0-9` 的数字作为起始字符，在起始字符后，还可以使用 `-`、`+` 或 `.` 。
+Feature 名称可以包含来自 Unicode XID standard 定义的字母，允许使用 `_` 或 `0-9` 的数字作为起始字符，在起始字符后，还可以使用 `-`、`+` 或 `.` 。
 
 但是我们**还是推荐按照 crates.io 的方式来设置 Feature 名称** : `crate.io` 要求名称只能由 ASCII 字母数字、`_`、`-` 或 `+` 组成。
 
@@ -126,7 +126,7 @@ parallel = ["jpeg-decoder/rayon"]
 
 > 注意: 上面的 "package-name/feature-name" 语法形式不仅会开启指定依赖的指定 feature，若该依赖是可选依赖，那还会自动将其引入
 >
-> 在 `nightly` 版本中，可以对这种行为进行禁用：[weak dependency features]("package-name/feature-name")
+> 在 `nightly` 版本中，可以对这种行为进行禁用：weak dependency features
 
 ## 通过命令行参数启用 feature
 

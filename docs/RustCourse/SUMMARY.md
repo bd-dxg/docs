@@ -346,7 +346,7 @@
 
 ---
 
-- [Appendix]()
+- [Appendix]
   - [关键字](appendix/keywords.md)
   - [运算符与符号](appendix/operators.md)
   - [表达式](appendix/expressions.md)

@@ -347,7 +347,7 @@ if let Ok(version) = env::var("DEP_OPENSSL_VERSION_NUMBER") {
 }
 ```
 
-这些 `cfg` 可以跟 [`cfg` 属性]() 或 [`cfg` 宏]()一起使用以实现条件编译。例如，在 OpenSSL 1.1 中引入了 SHA3 的支持，那么我们就可以指定只有当版本号为 1.1 时，才[包含并编译相关的代码](https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a733a66e7877fc/openssl/src/hash.rs#L67-L85):
+这些 `cfg` 可以跟 `cfg` 属性 或 `cfg` 宏一起使用以实现条件编译。例如，在 OpenSSL 1.1 中引入了 SHA3 的支持，那么我们就可以指定只有当版本号为 1.1 时，才[包含并编译相关的代码](https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a733a66e7877fc/openssl/src/hash.rs#L67-L85):
 
 ```rust
 // (portion of openssl crate)
