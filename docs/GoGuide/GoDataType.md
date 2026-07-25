@@ -17,7 +17,7 @@ package main
 import "fmt"
 
 func main() {
-  text := "这是一段文本，苍天已死，黄天当立，岁在甲子，天下大吉。"
+  text := "这是一段文本，苍天已死，黄天当立，岁在甲子，天下大吉。"// [!code focus:3]
     text += "\n这是第二段文本，天地玄黄，宇宙洪荒，日月盈昃，辰宿列张。"
   fmt.Println(text)
 }
@@ -36,13 +36,12 @@ Go 语言中字符串需要通过双引号包裹文本内容，如果有多段�
 ### 数字 {#number}
 
 ```go
-
 package main
 
 import "fmt"
 
 func main() {
-  var age int = 18
+  var age int = 18 // [!code focus:2]
   fmt.Println(age)
 }
 ```
@@ -88,7 +87,7 @@ package main
 import "fmt"
 
 func main() {
-  var isShow bool = true
+  var isShow bool = true // [!code focus:2]
   fmt.Println(isShow)
 }
 ```
@@ -105,7 +104,7 @@ package main
 import "fmt"
 
 func main() {
-  //数组
+  //数组 // [!code focus:12]
   var arr [5]int // 定义一个长度为5的整型数组 但是未赋值 所以输出为[0 0 0 0 0]
   fmt.Println(arr)
   //----------------------------------------------------------------------
@@ -140,7 +139,7 @@ package main
 import "fmt"
 
 func main() {
-  // 定义一个 map，键为 string，值为 int
+  // 定义一个 map，键为 string，值为 int // [!code focus:17]
   scores := map[string]int{
     "张三": 90,
     "李四": 85,
@@ -176,7 +175,7 @@ package main
 
 import "fmt"
 
-// 定义结构体类型
+// 定义结构体类型 // [!code focus:18]
 type Person struct {
   Name string
   Age  int
@@ -207,7 +206,7 @@ package main
 
 import "fmt"
 
-// 定义接口：包含一个 Speak 方法
+// 定义接口：包含一个 Speak 方法 // [!code focus:20]
 type Animal interface {
   Speak() string
 }

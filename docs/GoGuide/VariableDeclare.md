@@ -17,7 +17,7 @@ package main
 import "fmt"
 
 func main() {
-  //关键字 变量名 类型 = 值
+  //关键字 变量名 类型 = 值 // [!code focus:3]
   var name string = "小满"
   fmt.Println(name)
 }
@@ -39,7 +39,7 @@ package main
 import "fmt"
 
 func main() {
-  //关键字 变量名 类型 = 值
+  //关键字 变量名 类型 = 值 // [!code focus:4]
   var name = "小满"
   var age = 18 //int 表示整数类型
   fmt.Println(name, age) //输出：小满 18
@@ -57,7 +57,7 @@ package main
 import "fmt"
 
 func main() {
-  var name string
+  var name string // [!code focus:3]
   var age int
   fmt.Println(name, age) //输出："" 0
 }
@@ -76,7 +76,7 @@ package main
 import "fmt"
 
 func main() {
-  //变量名 := 值
+  //变量名 := 值 // [!code focus:3]
   name := "小满"
   fmt.Println(name)
 }
@@ -98,7 +98,7 @@ package main
 import "fmt"
 
 func main() {
-  //多个变量用逗号隔开
+  //多个变量用逗号隔开 // [!code focus:3]
   age, name := 18, "小满"
   fmt.Println(age, name) //输出：18 小满
 }

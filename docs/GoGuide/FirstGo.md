@@ -13,7 +13,9 @@ description: 编写并运行第一个 Go 程序，理解 package main、import �
 
 ```go [hello.go]
 package main
+
 import "fmt"
+
 func main() {
 fmt.Println("Hello, World!")
 }
@@ -39,7 +41,7 @@ package main
 例如我改成 aaa 会报错：
 
 ```go
-package aaa
+package aaa // [!code focus]
 
 import "fmt"
 

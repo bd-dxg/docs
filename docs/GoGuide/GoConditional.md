@@ -26,7 +26,7 @@ func main() {
     Age:  18,
     Sex:  "男",
   }
-  if person.Age >= 18 {
+  if person.Age >= 18 { // [!code focus:5]
     fmt.Println("成年")
   } else {
     fmt.Println("未成年")
@@ -55,7 +55,7 @@ func main() {
   person := Person{
     Status: "在线",
   }
-  if person.Status == "在线" {
+  if person.Status == "在线" { // [!code focus:9]
     fmt.Println("在线")
   } else if person.Status == "离线" {
     fmt.Println("离线")
@@ -88,7 +88,7 @@ func main() {
   person := Person{
     Status: "在线",
   }
-  switch person.Status {
+  switch person.Status { // [!code focus:10]
   case "在线":
     fmt.Println("在线")
   case "离线":
@@ -129,7 +129,7 @@ func main() {
     Age:  18,
     Sex:  "男",
   }
-  if person.Age >= 18 {
+  if person.Age >= 18 { // [!code focus:14]
     if person.Sex == "男" {
       fmt.Println("成年男性")
     } else {
