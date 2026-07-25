@@ -1,8 +1,13 @@
-# 变量声明
+---
+title: 变量声明
+description: Go 语言变量声明的完整写法、类型推断、简写及多变量声明方式
+---
+
+# 变量声明 {#variable-declare}
 
 > 作者: [小满zs](https://space.bilibili.com/99210573) 链接:https://go-docs.pages.dev/
 
-## 内功心法(小无相功)
+## 内功心法(小无相功) {#inner-art}
 
 Go 变量标准完整声明格式： `var 变量名 数据类型 = 初始值`
 
@@ -24,7 +29,7 @@ func main() {
 
 所以，当你需要存储文本、文字或任何字符序列时，就可以使用字符串类型。
 
-### 类型推断
+### 类型推断 {#type-inference}
 
 类型推断是Go语言的一种特性，它可以根据变量的值自动推断变量的类型。比如：
 
@@ -44,7 +49,7 @@ func main() {
 当你鼠标悬浮在变量名上时，会自动显示变量的类型和值。如上所示，`name` 的类型为 `string`，`age` 的类型为 `int`。
 ![](./imgs/6.avif)
 
-### 自动零值
+### 自动零值 {#zero-value}
 
 ```go
 package main
@@ -63,7 +68,7 @@ func main() {
 
 输出结果为："" 0，因为`name`和`age`没有赋值，所以默认值为空字符串和0。
 
-### 变量简写
+### 变量简写 {#short-variable}
 
 ```go
 package main
@@ -85,7 +90,7 @@ func main() {
 
 ![](./imgs/7.avif)
 
-### 多变量声明
+### 多变量声明 {#multi-variable}
 
 ```go
 package main
@@ -102,7 +107,7 @@ func main() {
 
 多个变量声明需要用,隔开，并且赋值的时候也是根据顺序赋值。例如 `age = 18, name = “小满”`。
 
-## 作业
+## 作业 {#homework}
 
 1. 声明一个变量，类型为字符串，值为"小满”。
 2. 声明一个变量，类型为整数，值为18。
