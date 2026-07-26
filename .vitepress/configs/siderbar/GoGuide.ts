@@ -9,6 +9,7 @@ const GoGuide: DefaultTheme.SidebarItem = {
     { text: '变量声明', link: '/VariableDeclare' },
     { text: 'Go数据类型', link: '/GoDataType' },
     { text: 'Go条件判断', link: '/GoConditional' },
+    { text: 'Go循环', link: '/GoLoop' },
   ],
 }
 
