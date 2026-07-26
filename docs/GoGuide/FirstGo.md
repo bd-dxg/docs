@@ -71,3 +71,9 @@ package command-line-arguments is not a main package # 错误提示
 
 1. 修改 `hello.go` 文件，将 “Hello, World!” 改成 “Hello, Go!"。
 2. 运行程序，观察输出结果。
+
+:::: details 答案
+:::code-group
+   <<< ./Answer/FirstGo.go [作业 ~vscode-icons:file-type-go~]
+:::
+::::
