@@ -24,4 +24,7 @@ export default defineConfig({
     outline: 'deep',
   },
   vite: viteConfig,
+  sitemap: {
+    hostname: 'https://docs.bddxg.top',
+  },
 })

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /_not_found/
+Disallow: /assets/chunks/
+Disallow: /node_modules/
+
+Sitemap: https://docs.bddxg.top/sitemap.xml
