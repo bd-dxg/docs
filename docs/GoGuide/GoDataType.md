@@ -98,28 +98,39 @@ func main() {
 
 ### 数组 和 切片 {#array-slice}
 
-```go
+:::code-group
+
+```go [数组 ~vscode-icons:file-type-go~]
 package main
 
 import "fmt"
 
 func main() {
-  //数组 // [!code focus:12]
+  //数组 // [!code focus:6]
   var arr [5]int // 定义一个长度为5的整型数组 但是未赋值 所以输出为[0 0 0 0 0]
   fmt.Println(arr)
-  //----------------------------------------------------------------------
+
   arr2 := [5]int{1, 2, 3, 4, 5} // 定义一个长度为5的整型数组 并赋值为[1 2 3 4 5]
   fmt.Println(arr2)
-  //----------------------------------------------------------------------
-  //切片
+}
+
+```
+
+```go [切片 ~vscode-icons:file-type-go~]
+package main
+
+import "fmt"
+
+func main(){
+  //切片 // [!code focus:5]
   arr3 := []int{}                          // 定义一个空切片
   arr3 = append(arr3, 6, 6, 6, 6, 6, 6, 6) // 追加元素
   fmt.Println(arr3)                        // 输出为[6 6 6 6 6 6 6]
   fmt.Println(len(arr3))                   // 获取切片的长度 输出为7
 }
-
 ```
 
+:::
 数组是长度固定的连续内存块，定义后长度不可变，未赋值的元素会使用对应类型的零值（整型为 0）。
 
 切片是对数组的抽象，长度可变，底层仍依赖数组。常用 `append` 追加元素，用 `len` 获取当前长度，用 `cap` 获取底层数组容量。
@@ -240,28 +251,28 @@ func main() {
 
 ## 作业 {#homework}
 
-1. 字符串：声明两个字符串变量，分别存储你的姓名和学校名称，用 `+` 拼接后打印，中间用换行符 `\n` 分隔。
+1. **字符串**：声明两个字符串变量，分别存储你的姓名和学校名称，用 `+` 拼接后打印，中间用换行符 `\n` 分隔。
 
     :::: details 答案
     :::code-group
       <<< ./Answer/GoDataType.go#string [ 字符串~vscode-icons:file-type-go~]
     :::
     ::::
-2. 数字：声明一个 `int` 类型的年龄变量和一个 `float64` 类型的身高变量（如 `175.5`），并打印输出。
+2. **数字**：声明一个 `int` 类型的年龄变量和一个 `float64` 类型的身高变量（如 `175.5`），并打印输出。
 
     :::: details 答案
     :::code-group
       <<< ./Answer/GoDataType.go#int [ 数字 ~vscode-icons:file-type-go~]
     :::
     ::::
-3. 布尔：声明一个 `bool` 变量表示「是否在线」，初始值为 `true`，打印后将其改为 `false` 再打印一次。
+3. **布尔**：声明一个 `bool` 变量表示「是否在线」，初始值为 `true`，打印后将其改为 `false` 再打印一次。
 
     :::: details 答案
     :::code-group
       <<< ./Answer/GoDataType.go#bool [ 布尔 ~vscode-icons:file-type-go~]
     :::
     ::::
-4. 数组与切片：
+4. **数组与切片**：
     - 定义一个长度为 3 的整型数组，赋值为 `[10, 20, 30]` 并打印；
     - 定义一个空切片，用 `append` 依次追加 `1, 2, 3`，打印切片内容和长度 `len`。
 
@@ -271,14 +282,14 @@ func main() {
       <<< ./Answer/GoDataType.go#slice [切片 ~vscode-icons:file-type-go~]
     :::
     ::::
-5. 映射：创建一个 `map[string]int`，存储 3 位同学的姓名和分数，打印其中一位的分数，再添加一位新同学并删除其中一位，最后遍历打印所有键值对。
+5. **映射**：创建一个 `map[string]int`，存储 3 位同学的姓名和分数，打印其中一位的分数，再添加一位新同学并删除其中一位，最后遍历打印所有键值对。
 
     :::: details 答案
     :::code-group
       <<< ./Answer/GoDataType.go#map [映射 ~vscode-icons:file-type-go~]
     :::
     ::::
-6. 结构体：定义一个 `Book` 结构体，包含 `Title`（书名）和 `Price`（价格）两个字段，创建一本书的实例并打印书名和价格。
+6. **结构体**：定义一个 `Book` 结构体，包含 `Title`（书名）和 `Price`（价格）两个字段，创建一本书的实例并打印书名和价格。
 
     :::: details 答案
     :::code-group
@@ -286,7 +297,7 @@ func main() {
       <<< ./Answer/GoDataType.go#struct-usage [使用示例 ~vscode-icons:file-type-go~]
     :::
     ::::
-7. 接口：定义一个 `Shape` 接口，包含 `Area() float64` 方法；再定义 `Rectangle`（矩形）结构体并实现该接口，创建实例后打印面积。
+7. **接口**：定义一个 `Shape` 接口，包含 `Area() float64` 方法；再定义 `Rectangle`（矩形）结构体并实现该接口，创建实例后打印面积。
 
     :::: details 答案
     :::code-group
@@ -294,7 +305,7 @@ func main() {
       <<< ./Answer/GoDataType.go#interface-usage [使用示例 ~vscode-icons:file-type-go~]
     :::
     ::::
-8. 综合练习：将上述 `Book` 结构体放入切片中，存储至少 3 本书，遍历切片打印每本书的信息。
+8. **综合练习**：将上述 `Book` 结构体放入切片中，存储至少 3 本书，遍历切片打印每本书的信息。
 
     :::: details 答案
     :::code-group
