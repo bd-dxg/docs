@@ -7,6 +7,8 @@ const markdownConfig: MarkdownOptions = {
   image: {
     lazyLoading: true,
   },
+  theme: { light: 'ayu-light', dark: 'ayu-dark' },
+  // theme: 'ayu-light',
   // env → bash 映射，消除 'The language "env" is not loaded' 警告
   languageAlias: { env: 'bash' },
   config(md) {
