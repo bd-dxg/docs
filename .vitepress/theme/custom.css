@@ -101,10 +101,13 @@
 }
 .vp-code-block-title [data-title]::before,
 .vp-code-group [data-title]::before {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
   margin-bottom: unset !important;
   vertical-align: middle;
+}
+.vp-code-group .tabs label {
+  line-height: 2.5rem !important;
 }
 /* 调整自定义块的字体样式 */
 #VPContent .main .custom-block {
