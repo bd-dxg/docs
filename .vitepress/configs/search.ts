@@ -3,14 +3,14 @@ import { type DefaultTheme } from 'vitepress'
 const search = {
   provider: 'local',
   options: {
-    // _render 是 VitePress 内部 API，用于过滤不索引的页面
-    _render: (md_src: string, env: { relativePath: string }, md: any) => {
-      // 只索引RustCourse项目
-      if (env.relativePath.startsWith('RustCourse/')) {
-        return md.renderAsync(md_src, env) // 返回空字符串 → 不索引该页面
-      }
-      return '' // 其他目录不索引
-    },
+    // // _render 是 VitePress 内部 API，用于过滤不索引的页面
+    // _render: (md_src: string, env: { relativePath: string }, md: any) => {
+    //   // 只索引RustCourse项目
+    //   if (env.relativePath.startsWith('RustCourse/')) {
+    //     return md.renderAsync(md_src, env) // 返回空字符串 → 不索引该页面
+    //   }
+    //   return '' // 其他目录不索引
+    // },
     translations: {
       button: {
         buttonText: '搜索文档',
