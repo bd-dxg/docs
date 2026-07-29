@@ -206,34 +206,34 @@ if !isLogin {
 1. **基础判断**：声明一个 `int` 类型的分数变量，用 `if / else if / else` 判断等级：90 分及以上为「优秀」，60～89 为「及格」，60 分以下为「不及格」，并打印结果。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoConditional.go#BasicJudgment [基础判断 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoConditional.go#BasicJudgment [基础判断 ~~vscode-icons:file-type-go~~]
    :::
    ::::
 
 2. **switch 练习**：定义一个 `string` 变量表示星期几（如 "周一"），用 `switch` 匹配并打印对应提示；未匹配时走 `default`，输出「无效的星期」。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoConditional.go#SwitchPractice [switch练习 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoConditional.go#SwitchPractice [switch练习 ~~vscode-icons:file-type-go~~]
    :::
    ::::
 3. **状态判断**：参照文中的 `Person` 结构体，将 `Status` 分别设为「在线」「离线」「忙碌」和一个自定义值，分别运行 `if / else if` 和 `switch` 两个版本，观察输出是否一致。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoConditional.go#type [类型定义 ~vscode-icons:file-type-go~]
-   <<< ./Answer/GoConditional.go#IFVersion [if版本 ~vscode-icons:file-type-go~]
-   <<< ./Answer/GoConditional.go#SwitchVersion [switch版本 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoConditional.go#type [类型定义 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoConditional.go#IFVersion [if版本 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoConditional.go#SwitchVersion [switch版本 ~~vscode-icons:file-type-go~~]
    :::
    ::::
 4. **逻辑运算符**：声明 `age` 和 `hasTicket` 两个变量，用 `&&` 判断「年满 18 岁且已购票」方可入场；再改用 `||` 判断「会员或年龄大于 60 岁」可享受优惠，分别打印结果。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoConditional.go#LogicalOp [逻辑运算符 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoConditional.go#LogicalOp [逻辑运算符 ~~vscode-icons:file-type-go~~]
    :::
    ::::
 5. **综合练习**：定义包含 `Name`、`Age`、`Score` 的结构体，结合 `if` 嵌套判断：年满 18 且分数不低于 60 才输出「合格」，否则输出「不合格」，并带上姓名。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoConditional.go#type[类型定义 ~vscode-icons:file-type-go~]
-   <<< ./Answer/GoConditional.go#ComprehensivePractice [综合练习 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoConditional.go#type[类型定义 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoConditional.go#ComprehensivePractice [综合练习 ~~vscode-icons:file-type-go~~]
    :::
    ::::

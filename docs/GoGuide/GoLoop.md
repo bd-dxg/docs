@@ -22,7 +22,7 @@ import "fmt"
 
 func main() {
   var hobbys = []string{"吃饭", "睡觉", "打豆豆"} // [!code focus:4]
-  for i := 0; i < len(hobbys); i++ { 
+  for i := 0; i < len(hobbys); i++ {
     fmt.Println(hobbys[i])
   }
 }
@@ -30,11 +30,11 @@ func main() {
 
 `for` 后面分成三段，用分号隔开：
 
-| 部分 | 作用 | 上面示例 |
-| --- | --- | --- |
-| 初始化 | 循环开始前执行一次 | `i := 0` |
-| 条件 | 每次循环前判断，为真才继续 | `i < len(hobbys)` |
-| 步进 | 每次循环体结束后执行 | `i++` |
+| 部分   | 作用                       | 上面示例          |
+| ------ | -------------------------- | ----------------- |
+| 初始化 | 循环开始前执行一次         | `i := 0`          |
+| 条件   | 每次循环前判断，为真才继续 | `i < len(hobbys)` |
+| 步进   | 每次循环体结束后执行       | `i++`             |
 
 输出依次为：`吃饭`、`睡觉`、`打豆豆`。
 
@@ -47,7 +47,7 @@ import "fmt"
 
 func main() {
   i := 0 // [!code focus:4]
-  for i < 3 { 
+  for i < 3 {
     fmt.Println(i)
     i++
   }
@@ -63,7 +63,7 @@ import "fmt"
 
 func main() {
   i := 0 // [!code focus:8]
-  for { 
+  for {
     fmt.Println(i)
     i++
     if i >= 3 {
@@ -84,7 +84,7 @@ import "fmt"
 
 func main() {
   var hobbys = []string{"吃饭", "睡觉", "打豆豆"} // [!code focus:4]
-  for index, hobby := range hobbys { 
+  for index, hobby := range hobbys {
     fmt.Println(index, hobby)
   }
 }
@@ -123,7 +123,7 @@ func main() {
     "name": "张三",
     "city": "杭州",
   }
-  for key, value := range person { 
+  for key, value := range person {
     fmt.Println(key, value)
   }
 }
@@ -140,7 +140,7 @@ import "fmt"
 
 func main() {
   text := "你好Go" // [!code focus:4]
-  for index, char := range text { 
+  for index, char := range text {
     fmt.Printf("下标 %d，字符 %c\n", index, char)
   }
 }
@@ -149,19 +149,29 @@ func main() {
 用 `range` 遍历字符串时，拿到的是 **Unicode 码点（rune）**，不是单个字节。
 
 像「你」「好」这种汉字各占 3 个字节，下标会按字节位置跳着走。
+:::code-group
 
-| 写法 | 适用场景 |
-| --- | --- |
+```text [运行结果 ~vscode-icons:file-type-go~]
+下标 0，字符 你
+下标 3，字符 好
+下标 6，字符 G
+下标 7，字符 o
+```
+
+:::
+
+| 写法                          | 适用场景                                        |
+| ----------------------------- | ----------------------------------------------- |
 | `for i := 0; i < len(x); i++` | 需要精确控制下标、步长，或从中间开始 / 倒序遍历 |
-| `for i, v := range x` | 顺序遍历切片、数组、字符串、map |
+| `for i, v := range x`         | 顺序遍历切片、数组、字符串、map                 |
 
 ## break 与 continue {#break-and-continue}
 
 循环中经常要「提前结束」或「跳过本次」：
 
-| 关键字 | 含义 |
-| --- | --- |
-| `break` | 立刻跳出当前循环 |
+| 关键字     | 含义                             |
+| ---------- | -------------------------------- |
+| `break`    | 立刻跳出当前循环                 |
 | `continue` | 跳过本次剩余代码，进入下一次循环 |
 
 ### break：跳出循环 {#break-statement}
@@ -174,7 +184,7 @@ import "fmt"
 func main() {
   hobbys := []string{"吃饭", "睡觉", "打豆豆"} // [!code focus:7]
   for _, hobby := range hobbys {
-    if hobby == "睡觉" { 
+    if hobby == "睡觉" {
       break
     }
     fmt.Println(hobby)
@@ -194,7 +204,7 @@ import "fmt"
 func main() {
   hobbys := []string{"吃饭", "睡觉", "打豆豆"} // [!code focus:7]
   for _, hobby := range hobbys {
-    if hobby == "睡觉" { 
+    if hobby == "睡觉" {
       continue
     }
     fmt.Println(hobby)
@@ -255,30 +265,30 @@ Loop:
 1. **普通 for**：声明一个 `1` 到 `10` 的循环，打印所有偶数。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoLoop.go#BasicFor [普通for ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoLoop.go#BasicFor [普通for ~~vscode-icons:file-type-go~~]
    :::
    ::::
 2. **range 练习**：定义切片 `[]string{"春", "夏", "秋", "冬"}`，分别用「只要下标」「只要值」「下标+值」三种 `range` 写法打印。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoLoop.go#RangePractice [range练习 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoLoop.go#RangePractice [range练习 ~~vscode-icons:file-type-go~~]
    :::
    ::::
 3. **break / continue**：遍历 `1` 到 `20`，遇到能被 `3` 整除的数就 `continue` 跳过；一旦遇到大于 `15` 的数就 `break` 结束。观察最终打印了哪些数。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoLoop.go#BreakContinue [break/continue ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoLoop.go#BreakContinue [break/continue ~~vscode-icons:file-type-go~~]
    :::
    ::::
 4. **类 while**：用「只写条件」的 for（不要初始化段和步进段）计算 `1 + 2 + ... + 100` 的和并打印。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoLoop.go#WhileLike [类while ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoLoop.go#WhileLike [类while ~~vscode-icons:file-type-go~~]
    :::
    ::::
 5. **综合练习**：定义 `map[string]int` 表示各科分数（如语文、数学、英语），用 `range` 遍历：低于 60 的科目打印「不及格」，其余打印「及格」，并统计及格科目数量。
    :::: details 答案
    :::code-group
-   <<< ./Answer/GoLoop.go#ComprehensivePractice [综合练习 ~vscode-icons:file-type-go~]
+   <<< ./Answer/GoLoop.go#ComprehensivePractice [综合练习 ~~vscode-icons:file-type-go~~]
    :::
    ::::

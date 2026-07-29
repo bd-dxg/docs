@@ -74,6 +74,6 @@ package command-line-arguments is not a main package # 错误提示
 
 :::: details 答案
 :::code-group
-   <<< ./Answer/FirstGo.go [作业 ~vscode-icons:file-type-go~]
+<<< ./Answer/FirstGo.go [作业 ~~vscode-icons:file-type-go~~]
 :::
 ::::

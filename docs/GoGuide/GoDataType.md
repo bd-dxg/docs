@@ -253,62 +253,69 @@ func main() {
 
 1. **字符串**：声明两个字符串变量，分别存储你的姓名和学校名称，用 `+` 拼接后打印，中间用换行符 `\n` 分隔。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#string [ 字符串~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#string [ 字符串~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 2. **数字**：声明一个 `int` 类型的年龄变量和一个 `float64` 类型的身高变量（如 `175.5`），并打印输出。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#int [ 数字 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#int [ 数字 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 3. **布尔**：声明一个 `bool` 变量表示「是否在线」，初始值为 `true`，打印后将其改为 `false` 再打印一次。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#bool [ 布尔 ~vscode-icons:file-type-go~]
-    :::
-    ::::
-4. **数组与切片**：
-    - 定义一个长度为 3 的整型数组，赋值为 `[10, 20, 30]` 并打印；
-    - 定义一个空切片，用 `append` 依次追加 `1, 2, 3`，打印切片内容和长度 `len`。
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#bool [ 布尔 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#array [数组 ~vscode-icons:file-type-go~]
-      <<< ./Answer/GoDataType.go#slice [切片 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+4. **数组与切片**：
+   - 定义一个长度为 3 的整型数组，赋值为 `[10, 20, 30]` 并打印；
+   - 定义一个空切片，用 `append` 依次追加 `1, 2, 3`，打印切片内容和长度 `len`。
+
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#array [数组 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoDataType.go#slice [切片 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 5. **映射**：创建一个 `map[string]int`，存储 3 位同学的姓名和分数，打印其中一位的分数，再添加一位新同学并删除其中一位，最后遍历打印所有键值对。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#map [映射 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#map [映射 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 6. **结构体**：定义一个 `Book` 结构体，包含 `Title`（书名）和 `Price`（价格）两个字段，创建一本书的实例并打印书名和价格。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#struct [结构体定义 ~vscode-icons:file-type-go~]
-      <<< ./Answer/GoDataType.go#struct-usage [使用示例 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#struct [结构体定义 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoDataType.go#struct-usage [使用示例 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 7. **接口**：定义一个 `Shape` 接口，包含 `Area() float64` 方法；再定义 `Rectangle`（矩形）结构体并实现该接口，创建实例后打印面积。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#interface [接口定义 ~vscode-icons:file-type-go~]
-      <<< ./Answer/GoDataType.go#interface-usage [使用示例 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#interface [接口定义 ~~vscode-icons:file-type-go~~]
+   <<< ./Answer/GoDataType.go#interface-usage [使用示例 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
+
 8. **综合练习**：将上述 `Book` 结构体放入切片中，存储至少 3 本书，遍历切片打印每本书的信息。
 
-    :::: details 答案
-    :::code-group
-      <<< ./Answer/GoDataType.go#comprehensive [综合练习 ~vscode-icons:file-type-go~]
-    :::
-    ::::
+   :::: details 答案
+   :::code-group
+   <<< ./Answer/GoDataType.go#comprehensive [综合练习 ~~vscode-icons:file-type-go~~]
+   :::
+   ::::
