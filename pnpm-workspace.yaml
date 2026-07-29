@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - vitepress-plugin-group-icons@1.7.6
