@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { viteConfig, markdownConfig, sidebar, search } from './configs'
+import { viteConfig, markdownConfig, sidebar } from './configs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'docs',
@@ -18,7 +18,6 @@ export default defineConfig({
       { text: 'Go 编程圣典', link: '/GoGuide/' },
     ],
     sidebar,
-    search,
     outline: 'deep',
   },
   vite: viteConfig,
