@@ -1,6 +1,16 @@
 # 文件夹
-node_modules
+node_modules/
 .vitepress/dist
 .vitepress/cache
+
+# AI文件夹
+.claude/
+.codex/
+.reasonix/
+.pi/
+
 # 文件
 .env
+
+# AI配置文件
+reasonix.toml
